@@ -1,0 +1,12 @@
+{
+    "situation": {
+        "ordersAppliedFor": [
+            "nonMolestationOrder",
+            "occupationOrder"
+        ],
+        "ordersAppliedWithoutNotice": true,
+        "ordersAppliedWithoutNoticeReason": [
+            "riskOfSignificantHarm"
+        ]
+    }
+}

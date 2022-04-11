@@ -1,1 +1,52 @@
-
+{
+	"$schema": "http://json-schema.org/draft-04/schema",
+	"title": "FL401 Data Schema: Version 1.0",
+	"type": "object",
+	"definitions": {
+        "orderTypes": {
+			"type": "string",
+			"enum": [
+				"nonMolestationOrder",
+				"occupationOrder"
+			]
+		},
+        "withoutNoticeReasons": {
+			"type": "string",
+			"enum": [
+				"riskOfSignificantHarm",
+				"deterredFromPursuingApplication",
+                "respondentDeliberatelyEvadingService"
+			]
+        }
+    },
+	"properties": {
+        "situation": {
+            "type": "object",
+            "properties": {
+                "ordersAppliedFor": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/orderTypes"
+                    }
+                },
+                "ordersAppliedWithoutNotice": {
+                    "type": "boolean"
+                },
+                "ordersAppliedWithoutNoticeReason": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/withoutNoticeReasons"
+                    }
+                }
+            },
+            "required": [
+                "ordersAppliedFor"
+            ],
+            "dependentRequired": {
+                "ordersAppliedWithoutNotice": ["ordersAppliedWithoutNoticeReason"]
+            }
+        }
+    }
+}
