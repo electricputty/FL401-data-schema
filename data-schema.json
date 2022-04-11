@@ -1,25 +1,25 @@
 {
-	"$schema": "http://json-schema.org/draft-04/schema",
-	"title": "FL401 Data Schema: Version 1.0",
-	"type": "object",
-	"definitions": {
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title": "FL401 Data Schema: Version 1.0",
+    "type": "object",
+    "definitions": {
         "orderTypes": {
-			"type": "string",
-			"enum": [
+            "type": "string",
+            "enum": [
                 "nonMolestationOrder",
                 "occupationOrder"
-			]
-		},
+            ]
+        },
         "withoutNoticeReasons": {
-			"type": "string",
-			"enum": [
+            "type": "string",
+            "enum": [
                 "riskOfSignificantHarm",
                 "deterredFromPursuingApplication",
                 "respondentDeliberatelyEvadingService"
-			]
+            ]
         }
     },
-	"properties": {
+    "properties": {
         "situation": {
             "type": "object",
             "properties": {
