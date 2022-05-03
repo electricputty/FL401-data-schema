@@ -1,8 +1,16 @@
 {
-    "$schema": "http://json-schema.org/draft-04/schema",
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
     "title": "FL401 Data Schema: Version 1.0",
     "type": "object",
     "definitions": {
+        "applicantAgeBrackets": {
+            "type": "string",
+            "enum": [
+                "eighteenOrOlder",
+                "sixteenToEighteen",
+                "underSixteen"
+            ]
+        },
         "orderTypes": {
             "type": "string",
             "enum": [
@@ -20,6 +28,17 @@
         }
     },
     "properties": {
+        "beforeStart": {
+            "type": "object",
+            "properties": {
+                "applicantHowOld": {
+                    "$ref": "#/definitions/applicantAgeBrackets"
+                }
+            },
+            "required": [
+                "applicantHowOld"
+            ]
+        },
         "situation": {
             "type": "object",
             "properties": {
@@ -39,14 +58,51 @@
                     "items": {
                         "$ref": "#/definitions/withoutNoticeReasons"
                     }
+                },
+                "bailConditionsOnRespondent": {
+                    "type": "boolean"
+                },
+                "bailConditionsEndDate": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Use Iso8601 format (e.g. 1975-12-25T00:00:00-0000)"
+                },
+                "additionalDetailsForCourt": {
+                    "type": "string"
                 }
             },
             "required": [
                 "ordersAppliedFor"
             ],
             "dependentRequired": {
-                "ordersAppliedWithoutNotice": ["ordersAppliedWithoutNoticeReason"]
+                "ordersAppliedWithoutNotice": ["ordersAppliedWithoutNoticeReason"],
+                "bailConditionsOnRespondent": ["bailConditionsEndDate"]
             }
+        },
+        "applicantDetails": {
+            "type": "object",
+            "properties": {
+                "applicanFirstName": {
+                    "type": "string"
+                },
+                "applicanLastName": {
+                    "type": "string"
+                }
+                ,
+                "applicanOtherNames": {
+                    "type": "string"
+                },
+                "applicanDateOfBirth": {
+                    "type": "string",
+                    "format": "date-time",
+                    "description": "Use Iso8601 format (e.g. 1975-12-25T00:00:00-0000)"
+                }
+            },
+            "required": [
+                "applicanFirstName",
+                "applicanLastName",
+                "applicanDateOfBirth"
+            ]
         }
     }
 }
