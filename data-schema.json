@@ -82,26 +82,26 @@
         "applicantDetails": {
             "type": "object",
             "properties": {
-                "applicanFirstName": {
+                "applicantFirstName": {
                     "type": "string"
                 },
-                "applicanLastName": {
+                "applicantLastName": {
                     "type": "string"
                 }
                 ,
-                "applicanOtherNames": {
+                "applicantOtherNames": {
                     "type": "string"
                 },
-                "applicanDateOfBirth": {
+                "applicantDateOfBirth": {
                     "type": "string",
                     "format": "date-time",
                     "description": "Use Iso8601 format (e.g. 1975-12-25T00:00:00-0000)"
                 }
             },
             "required": [
-                "applicanFirstName",
-                "applicanLastName",
-                "applicanDateOfBirth"
+                "applicantFirstName",
+                "applicantLastName",
+                "applicantDateOfBirth"
             ]
         }
     }
