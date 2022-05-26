@@ -154,8 +154,7 @@
                 },
                 "applicantLastName": {
                     "type": "string"
-                }
-                ,
+                },
                 "applicantOtherNames": {
                     "type": "string"
                 },
@@ -167,16 +166,16 @@
                 "shareContactDetailsWithRespondent": {
                     "type": "boolean"
                 },
-                "address": {
+                "applicantAddress": {
                     "$ref": "#/definitions/ukAddress"
                 },
-                "phoneNumber": {
+                "applicantPhoneNumber": {
                     "type": "string"
                 },
-                "emailAddress": {
+                "applicantEmailAddress": {
                     "type": "string"
                 },
-                "preferredContact": {
+                "applicantPreferredContact": {
                     "type": "array",
                     "minItems": 1,
                     "items": {
@@ -212,11 +211,11 @@
                 }
             },
             "required": [
-                "firstName",
-                "lastName",
-                "dateOfBirth",
+                "applicantFirstName",
+                "applicantLastName",
+                "applicantDateOfBirth",
                 "shareContactDetailsWithRespondent",
-                "address",
+                "applicantAddress",
                 "hasLegalRepresentative"
             ]
         }

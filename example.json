@@ -16,18 +16,19 @@
             "additionalDetailsForCourt": "These are some additional detals for the court"
         },
         "applicantDetails": {
-            "firstName": "Jane",
-            "lastName": "Smith",
-            "dateOfBirth": "1998-04-28T00:00:00",
+            "applicantFirstName": "Jane",
+            "applicantLastName": "Smith",
+            "applicantOtherNames": "Also known as Jane Brown",
+            "applicantDateOfBirth": "1998-04-28T00:00:00",
             "shareContactDetailsWithRespondent": false,
-            "address": {
+            "applicantAddress": {
                 "addressUKLine1": "105 Earlham Road",
                 "postTown": "Norwich",
                 "postCode": "NR2 7TE"
             },
-            "phoneNumber": "01603 789541",
-            "emailAddress": "Jenny Johnson",
-            "preferredContact": [
+            "applicantPhoneNumber": "01603 789541",
+            "applicantEmailAddress": "Jenny Johnson",
+            "applicantPreferredContact": [
                 "phone",
                 "email"
             ],
