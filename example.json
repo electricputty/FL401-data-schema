@@ -1,23 +1,45 @@
-{
-    "beforeStart": {
-        "applicantHowOld": "sixteenToEighteen"
-    },
-    "situation": {
-        "ordersAppliedFor": [
-            "nonMolestationOrder",
-            "occupationOrder"
-        ],
-        "ordersAppliedWithoutNotice": true,
-        "ordersAppliedWithoutNoticeReason": [
-            "riskOfSignificantHarm"
-        ],
-        "anyBailConditionsOnRespondent": true,
-        "bailConditionsEndDate": "2022-04-28T18:12:00",
-        "additionalDetailsForCourt": "These are some additional detals for the court"
-    },
-    "applicantDetails": {
-        "applicantFirstName": "Jane",
-        "applicantLastName": "Smith",
-        "applicantDateOfBirth": "1998-04-28T00:00:00"
+    {
+        "beforeStart": {
+            "applicantHowOld": "sixteenToEighteen"
+        },
+        "situation": {
+            "ordersAppliedFor": [
+                "nonMolestationOrder",
+                "occupationOrder"
+            ],
+            "ordersAppliedWithoutNotice": true,
+            "ordersAppliedWithoutNoticeReason": [
+                "riskOfSignificantHarm"
+            ],
+            "anyBailConditionsOnRespondent": true,
+            "bailConditionsEndDate": "2022-04-28T18:12:00",
+            "additionalDetailsForCourt": "These are some additional detals for the court"
+        },
+        "applicantDetails": {
+            "firstName": "Jane",
+            "lastName": "Smith",
+            "dateOfBirth": "1998-04-28T00:00:00",
+            "shareContactDetailsWithRespondent": false,
+            "address": {
+                "addressUKLine1": "105 Earlham Road",
+                "postTown": "Norwich",
+                "postCode": "NR2 7TE"
+            },
+            "phoneNumber": "01603 789541",
+            "emailAddress": "Jenny Johnson",
+            "preferredContact": [
+                "phone",
+                "email"
+            ],
+            "contactInstructions": "These are the applicant contact instructions",
+            "hasLegalRepresentative": true,
+            "legalRepresentativeName": "Johanna Marshall",
+            "legalRepresentativeFirm": "J M G Legal",
+            "legalRepresentativeAddress": {
+                "addressUKLine1": "The Guild Building",
+                "addressUKLine2": "108 Rouen Road",
+                "postTown": "Norwich",
+                "postCode": "NR1 9YU"
+            }
+        }
     }
-}
