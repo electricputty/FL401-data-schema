@@ -3,7 +3,7 @@
     "title": "FL401 Data Schema: Version 1.0",
     "type": "object",
     "definitions": {
-        "applicantAgeBrackets": {
+        "applicantAgeBracket": {
             "type": "string",
             "enum": [
                 "eighteenOrOlder",
@@ -11,19 +11,41 @@
                 "underSixteen"
             ]
         },
-        "orderTypes": {
+        "childAtAddress": {
+            "type": "object",
+            "properties": {
+                "fullName": {
+                    "type": "string"
+                },
+                "age": {
+                    "type": "integer"
+                }
+            },
+            "required": [
+                "fullName",
+                "age"
+            ]
+        },
+        "courtProceeding": {
+            "type": "object",
+            "properties": {
+                "nameOfCourt": {
+                    "type": "string"
+                },
+                "caseNumber": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "nameOfCourt",
+                "caseNumber"
+            ]
+        },
+        "orderType": {
             "type": "string",
             "enum": [
                 "nonMolestationOrder",
                 "occupationOrder"
-            ]
-        },
-        "withoutNoticeReasons": {
-            "type": "string",
-            "enum": [
-                "riskOfSignificantHarm",
-                "deterredFromPursuingApplication",
-                "respondentDeliberatelyEvadingService"
             ]
         },
         "preferredContact": {
@@ -33,35 +55,24 @@
                 "email"
             ]
         },
-        "ukAddress": {
-            "type": "object",
-            "properties": {
-                "addressUKLine1": { "type": "string" },
-                "addressUKLine2": { "type": "string" },
-                "addressUKLine3": { "type": "string" },
-                "postTown": { "type": "string" },
-                "postCode": { "type": "string" },
-                "county": { "type": "string" },
-                "country": { "type": "string" }
-            },
-            "required": [
-                "addressUKLine1",
-                "postTown",
-                "postCode"
-            ]
-        },
         "protectedChild": {
             "type": "object",
             "properties": {
-                "fullName": { "type": "string"},
-                "dateOfBirth": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Use Iso8601 format (e.g. 1975-12-25T00:00:00-0000)"
+                "fullName": {
+                    "type": "string"
                 },
-                "relationship": { "type": "string"},
-                "parentalResponsibility": { "type": "bool"},
-                "respondentRelationship": { "type": "string"}
+                "dateOfBirth": {
+                    "$ref": "#/definitions/standardDate"
+                },
+                "relationship": {
+                    "type": "string"
+                },
+                "parentalResponsibility": {
+                    "type": "bool"
+                },
+                "respondentRelationship": {
+                    "type": "string"
+                }
             },
             "required": [
                 "fullName",
@@ -71,26 +82,95 @@
                 "respondentRelationship"
             ]
         },
-        "courtProceedings": {
-            "type": "object",
-            "properties": {
-                "nameOfCourt": { "type": "string"},
-                "caseNumber": { "type": "string"}
-            },
-            "required": [
-                "nameOfCourt",
-                "caseNumber"
+        "relationshipDescription": {
+            "type": "string",
+            "enum": [
+                "marriedOrCivil",
+                "formerlyMarriedOrCivil",
+                "engagedOrProposed",
+                "formerlyEngagedOrProposed",
+                "liveTogetherCouple",
+                "formerlyLiveTogetherCouple",
+                "currentNotLiveTogether",
+                "formerNotLiveTogether",
+                "noneOfAbove"
             ]
         },
-        "childAtAddress": {
+        "relationshipType": {
+            "type": "string",
+            "enum": [
+                "father",
+                "mother",
+                "son",
+                "daughter",
+                "brother",
+                "sister",
+                "grandfather",
+                "grandmother",
+                "uncle",
+                "aunt",
+                "nephew",
+                "niece",
+                "cousin",
+                "other"
+            ]
+        },
+        "standardDate": {
             "type": "object",
             "properties": {
-                "fullName": { "type": "string"},
-                "age": { "type": "integer" }
+                "day": {
+                    "type": "integer"
+                },
+                "month": {
+                    "type": "integer"
+                },
+                "year": {
+                    "type": "integer"
+                },
             },
             "required": [
-                "fullName",
-                "age"
+                "day",
+                "month",
+                "year"
+            ]
+        },
+        "ukAddress": {
+            "type": "object",
+            "properties": {
+                "addressUKLine1": {
+                    "type": "string"
+                },
+                "addressUKLine2": {
+                    "type": "string"
+                },
+                "addressUKLine3": {
+                    "type": "string"
+                },
+                "postTown": {
+                    "type": "string"
+                },
+                "postCode": {
+                    "type": "string"
+                },
+                "county": {
+                    "type": "string"
+                },
+                "country": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "addressUKLine1",
+                "postTown",
+                "postCode"
+            ]
+        },
+        "withoutNoticeReason": {
+            "type": "string",
+            "enum": [
+                "riskOfSignificantHarm",
+                "deterredFromPursuingApplication",
+                "respondentDeliberatelyEvadingService"
             ]
         }
     },
@@ -99,7 +179,7 @@
             "type": "object",
             "properties": {
                 "applicantHowOld": {
-                    "$ref": "#/definitions/applicantAgeBrackets"
+                    "$ref": "#/definitions/applicantAgeBracket"
                 }
             },
             "required": [
@@ -113,7 +193,7 @@
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/orderTypes"
+                        "$ref": "#/definitions/orderType"
                     }
                 },
                 "ordersAppliedWithoutNotice": {
@@ -123,16 +203,14 @@
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/withoutNoticeReasons"
+                        "$ref": "#/definitions/withoutNoticeReason"
                     }
                 },
                 "bailConditionsOnRespondent": {
                     "type": "boolean"
                 },
                 "bailConditionsEndDate": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Use Iso8601 format (e.g. 1975-12-25T00:00:00-0000)"
+                    "$ref": "#/definitions/standardDate"
                 },
                 "additionalDetailsForCourt": {
                     "type": "string"
@@ -159,9 +237,7 @@
                     "type": "string"
                 },
                 "applicantDateOfBirth": {
-                    "type": "string",
-                    "format": "date-time",
-                    "description": "Use Iso8601 format (e.g. 1975-12-25T00:00:00-0000)"
+                    "$ref": "#/definitions/standardDate"
                 },
                 "shareContactDetailsWithRespondent": {
                     "type": "boolean"
@@ -173,7 +249,8 @@
                     "type": "string"
                 },
                 "applicantEmailAddress": {
-                    "type": "string"
+                    "type": "string",
+                    "format": "email"
                 },
                 "applicantPreferredContact": {
                     "type": "array",
@@ -182,10 +259,10 @@
                         "$ref": "#/definitions/preferredContact"
                     }
                 },
-                "contactInstructions": {
+                "applicantContactInstructions": {
                     "type": "string"
                 },
-                "hasLegalRepresentative": {
+                "applicantHasLegalRepresentative": {
                     "type": "boolean"
                 },
                 "legalRepresentativeName": {
@@ -204,7 +281,8 @@
                     "type": "string"
                 },
                 "legalRepresentativeEmail": {
-                    "type": "string"
+                    "type": "string",
+                    "format": "email"
                 },
                 "legalRepresentativeReference": {
                     "type": "string"
@@ -216,8 +294,100 @@
                 "applicantDateOfBirth",
                 "shareContactDetailsWithRespondent",
                 "applicantAddress",
-                "hasLegalRepresentative"
+                "applicantHasLegalRepresentative"
             ]
+        },
+        "respondentDetails": {
+            "type": "object",
+            "properties": {
+                "respondentFirstName": {
+                    "type": "string"
+                },
+                "respondentLastName": {
+                    "type": "string"
+                },
+                "respondentOtherNames": {
+                    "type": "string"
+                },
+                "respondentDateOfBirth": {
+                    "$ref": "#/definitions/standardDate"
+                },
+                "respondentLivesWithApplicant": {
+                    "type": "boolean"
+                },
+                "respondentAddress": {
+                    "$ref": "#/definitions/ukAddress"
+                },
+                "respondentPhoneNumber": {
+                    "type": "string"
+                },
+                "respondentEmailAddress": {
+                    "type": "string",
+                    "format": "email"
+                }
+            },
+            "required": [
+                "respondentFirstName",
+                "respondentLastName",
+                "respondentLivesWithApplicant",
+                "respondentAddress"
+            ]
+        },
+        "relationshipWithRespondent": {
+            "type": "object",
+            "properties": {
+                "relationshipDescription": {
+                    "type": "array",
+                    "minItems": 1,
+                    "items": {
+                        "$ref": "#/definitions/relationshipDescription"
+                    }
+                },
+                "relationshipStartDate": {
+                    "$ref": "#/definitions/standardDate"
+                },
+                "relationshipEndDate": {
+                    "$ref": "#/definitions/standardDate"
+                },
+                "ceremonyDate": {
+                    "$ref": "#/definitions/standardDate"
+                },
+                "relationshipWithRespondent": {
+                    "$ref": "#/definitions/relationshipType"
+                },
+                "relationshipWithRespondentOther": {
+                    "type": "string"
+                },
+                "anyChildren": {
+                    "type": "boolean"
+                }
+            },
+            "required": [
+                "relationshipDescription",
+                "anyChildren"
+            ],
+            "if": {
+                "properties": {
+                    "relationshipWithRespondent": {
+                        "const": "other"
+                    }
+                },
+                "required": [
+                    "relationshipWithRespondent"
+                ]
+            },
+            "then": {
+                "required": [
+                    "relationshipWithRespondentOther"
+                ]
+            }
         }
-    }
+    },
+    "required": [
+        "beforeStart",
+        "situation",
+        "applicantDetails",
+        "respondentDetails",
+        "relationshipWithRespondent"
+    ]
 }

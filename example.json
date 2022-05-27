@@ -12,14 +12,22 @@
                 "riskOfSignificantHarm"
             ],
             "anyBailConditionsOnRespondent": true,
-            "bailConditionsEndDate": "2022-04-28T18:12:00",
+            "bailConditionsEndDate": {
+                "day": 8,
+                "month": 4,
+                "year": 2022
+            },
             "additionalDetailsForCourt": "These are some additional detals for the court"
         },
         "applicantDetails": {
             "applicantFirstName": "Jane",
             "applicantLastName": "Smith",
             "applicantOtherNames": "Also known as Jane Brown",
-            "applicantDateOfBirth": "1998-04-28T00:00:00",
+            "applicantDateOfBirth": {
+                "day": 19,
+                "month": 10,
+                "year": 1988
+            },
             "shareContactDetailsWithRespondent": false,
             "applicantAddress": {
                 "addressUKLine1": "105 Earlham Road",
@@ -27,13 +35,13 @@
                 "postCode": "NR2 7TE"
             },
             "applicantPhoneNumber": "01603 789541",
-            "applicantEmailAddress": "Jenny Johnson",
+            "applicantEmailAddress": "Jane.Smith@emailprovider.com",
             "applicantPreferredContact": [
                 "phone",
                 "email"
             ],
-            "contactInstructions": "These are the applicant contact instructions",
-            "hasLegalRepresentative": true,
+            "applicantContactInstructions": "These are the applicant contact instructions",
+            "applicantHasLegalRepresentative": true,
             "legalRepresentativeName": "Johanna Marshall",
             "legalRepresentativeFirm": "J M G Legal",
             "legalRepresentativeAddress": {
@@ -42,5 +50,48 @@
                 "postTown": "Norwich",
                 "postCode": "NR1 9YU"
             }
+        },
+        "respondentDetails": {
+            "respondentFirstName": "Steve",
+            "respondentLastName": "Jones",
+            "respondentOtherNames": "aka Ben Johnson",
+            "respondentDateOfBirth": {
+                "day": 16,
+                "month": 9,
+                "year": 1986
+            },
+            "respondentLivesWithApplicant": false,
+            "respondentAddress": {
+                "addressUKLine1": "Archaway Cottage",
+                "addressUKLine2": "The paddock",
+                "addressUKLine3": "Fakenham",
+                "postTown": "Norwich",
+                "postCode": "NR22 4FN"
+            },
+            "respondentPhoneNumber": "07899 112112",
+            "respondentEmailAddress": "stevo@serviceprovide.net"
+        },
+        "relationshipWithRespondent": {
+            "relationshipDescription": [
+                "formerlyEngagedOrProposed"
+            ],
+            "relationshipStartDate": {
+                "day": 5,
+                "month": 3,
+                "year": 2012
+            },
+            "relationshipEndDate": {
+                "day": 18,
+                "month": 12,
+                "year": 2021
+            },
+            "ceremonyDate": {
+                "day": 12,
+                "month": 9,
+                "year": 2017
+            },
+            "relationshipWithRespondent": "other",
+            "relationshipWithRespondentOther": "This is more information about the relationship with the respondent",
+            "anyChildren": true
         }
     }
