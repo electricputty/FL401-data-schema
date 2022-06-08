@@ -11,6 +11,13 @@
                 "underSixteen"
             ]
         },
+        "applicationCover": {
+            "type": "string",
+            "enum": [
+                "applicantOnly",
+                "applicantAndChildren"
+            ]
+        },
         "childAtAddress": {
             "type": "object",
             "properties": {
@@ -68,7 +75,7 @@
                     "type": "string"
                 },
                 "parentalResponsibility": {
-                    "type": "bool"
+                    "type": "boolean"
                 },
                 "respondentRelationship": {
                     "type": "string"
@@ -119,14 +126,18 @@
             "type": "object",
             "properties": {
                 "day": {
-                    "type": "integer"
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 31
                 },
                 "month": {
-                    "type": "integer"
+                    "type": "number",
+                    "minimum": 1,
+                    "maximum": 12
                 },
                 "year": {
-                    "type": "integer"
-                },
+                    "type": "number"
+                }
             },
             "required": [
                 "day",
@@ -381,6 +392,23 @@
                     "relationshipWithRespondentOther"
                 ]
             }
+        },
+        "family": {
+            "type": "object",
+            "properties": {
+                "whoApplicationIsFor": {
+                    "$ref": "#/definitions/applicationCover"
+                },
+                "protectedChildren": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/protectedChild"
+                    }
+                }
+            },
+            "required": [
+                "whoApplicationIsFor"
+            ]
         }
     },
     "required": [
@@ -388,6 +416,7 @@
         "situation",
         "applicantDetails",
         "respondentDetails",
-        "relationshipWithRespondent"
+        "relationshipWithRespondent",
+        "family"
     ]
 }

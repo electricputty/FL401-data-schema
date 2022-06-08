@@ -93,5 +93,21 @@
             "relationshipWithRespondent": "other",
             "relationshipWithRespondentOther": "This is more information about the relationship with the respondent",
             "anyChildren": true
+        },
+        "family": {
+            "whoApplicationIsFor": "applicantOnly",
+            "protectedChildren": [
+                {
+                    "fullName": "Bobby Brown",
+                    "dateOfBirth": {
+                        "day": 12,
+                        "month": 5,
+                        "year": 2011
+                    },
+                    "relationship": "mother",
+                    "parentalResponsibility": true,
+                    "respondentRelationship": "father"
+                }
+            ]
         }
     }
