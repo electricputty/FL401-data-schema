@@ -18,6 +18,30 @@
                 "applicantAndChildren"
             ]
         },
+        "behaviourTowardsApplicant": {
+            "type": "string",
+            "enum": [
+                "beingViolentOrThreatening",
+                "harrasingOrIntimidating",
+                "publishingAboutApplicant",
+                "contactingApplicant",
+                "damagingPossessions",
+                "damagingHome",
+                "enteringHome",
+                "comingNearHome",
+                "comingNearWork"
+            ]
+        },
+        "behaviourTowardsChildren": {
+            "type": "string",
+            "enum": [
+                "beingViolentOrThreatening",
+                "harrasingOrIntimidating",
+                "publishingAboutChildren",
+                "contactingDirectly",
+                "goingNearSchoolNursery"
+            ]
+        },
         "childAtAddress": {
             "type": "object",
             "properties": {
@@ -40,6 +64,9 @@
                     "type": "string"
                 },
                 "caseNumber": {
+                    "type": "string"
+                },
+                "caseTypeAndOtherInfo": {
                     "type": "string"
                 }
             },
@@ -404,10 +431,60 @@
                     "items": {
                         "$ref": "#/definitions/protectedChild"
                     }
+                },
+                "anyOngoingCourtProceedings": {
+                    "type": "boolean"
+                },
+                "ongoingCourtProceedings": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/courtProceeding"
+                    }
                 }
             },
             "required": [
-                "whoApplicationIsFor"
+                "whoApplicationIsFor",
+                "anyOngoingCourtProceedings"
+            ]
+        },
+        "respondentBehaviour": {
+            "type": "object",
+            "properties": {
+                "applyingForMonMolestationOrder": {
+                    "type": "boolean"
+                },
+                "stopBehaviourTowardsApplicant": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/behaviourTowardsApplicant"
+                    }
+                },
+                "stopBehaviourTowardsChildren": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/behaviourTowardsChildren"
+                    }
+                },
+                "stopBehaviourAnythingElse": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "applyingForMonMolestationOrder"
+            ]
+        },
+        "home": {
+            "type": "object",
+            "properties": {
+                "applyingForOccupationOrder": {
+                    "type": "boolean"
+                },
+                "occupationOrderAddress": {
+                    "$ref": "#/definitions/ukAddress"
+                }
+            },
+            "required": [
+                "applyingForOccupationOrder"
             ]
         }
     },
@@ -417,6 +494,8 @@
         "applicantDetails",
         "respondentDetails",
         "relationshipWithRespondent",
-        "family"
+        "family",
+        "respondentBehaviour",
+        "home"
     ]
 }
