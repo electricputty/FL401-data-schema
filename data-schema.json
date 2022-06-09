@@ -57,6 +57,14 @@
                 "age"
             ]
         },
+        "contractName": {
+            "type": "string",
+            "enum": [
+                "applicant",
+                "respondent",
+                "other"
+            ]
+        },
         "courtProceeding": {
             "type": "object",
             "properties": {
@@ -75,6 +83,24 @@
                 "caseNumber"
             ]
         },
+        "FamilyHomeOutcome": {
+            "type": "string",
+            "enum": [
+                "respondentToPayRepairsMaintenance",
+                "respondentToPayRentMortgage",
+                "useOfFurnitureOrContents"
+            ]
+        },
+        "livingSituationOutcome": {
+            "type": "string",
+            "enum": [
+                "stayInHome",
+                "returnToHome",
+                "respondentNotEnterHome",
+                "respondentAwayFromSurroundingArea",
+                "respondentLimitInHome"
+            ]
+        },
         "orderType": {
             "type": "string",
             "enum": [
@@ -87,6 +113,15 @@
             "enum": [
                 "phone",
                 "email"
+            ]
+        },
+        "previousOrIntendedResidentAtAddress": {
+            "type": "string",
+            "enum": [
+                "applicantAndRespondent",
+                "applicant",
+                "respondent",
+                "neither"
             ]
         },
         "protectedChild": {
@@ -146,6 +181,15 @@
                 "nephew",
                 "niece",
                 "cousin",
+                "other"
+            ]
+        },
+        "residentAtAddress": {
+            "type": "string",
+            "enum": [
+                "applicant",
+                "respondent",
+                "children",
                 "other"
             ]
         },
@@ -473,7 +517,7 @@
                 "applyingForMonMolestationOrder"
             ]
         },
-        "home": {
+        "theHome": {
             "type": "object",
             "properties": {
                 "applyingForOccupationOrder": {
@@ -481,6 +525,102 @@
                 },
                 "occupationOrderAddress": {
                     "$ref": "#/definitions/ukAddress"
+                },
+                "currentlyLivesAtAddress": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/residentAtAddress"
+                    }
+                },
+                "currentlyLivesAtAddressOther": {
+                    "type": "string"
+                },
+                "previouslyLivedAtAddress": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/previousOrIntendedResidentAtAddress"
+                    }
+                },
+                "intendedToLiveAtAddress": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/previousOrIntendedResidentAtAddress"
+                    }
+                },
+                "childrenSharedResponsibility": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/childAtAddress"
+                    }
+                },
+                "childrenApplicantResponsibility": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/childAtAddress"
+                    }
+                },
+                "propertySpeciallyAdapted": {
+                    "type": "boolean"
+                },
+                "propertySpeciallyAdaptedDetails": {
+                    "type": "string"
+                },
+                "propertyHasMortgage": {
+                    "type": "boolean"
+                },
+                "namedOnMortgage": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/contractName"
+                    }
+                },
+                "namedOnMortgageOther": {
+                    "type": "string"
+                },
+                "mortgageNumber": {
+                    "type": "string"
+                },
+                "mortgageLenderName": {
+                    "type": "string"
+                },
+                "mortgageLenderAddress": {
+                    "$ref": "#/definitions/ukAddress"
+                },
+                "propertyIsRented":  {
+                    "type": "boolean"
+                },
+                "namedOnRentalAgreement": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/contractName"
+                    }
+                },
+                "namedOnRentalAgreementOther": {
+                    "type": "string"
+                },
+                "landlordName": {
+                    "type": "string"
+                },
+                "landlordAddress": {
+                    "$ref": "#/definitions/ukAddress"
+                },
+                "haveHomeRights": {
+                    "type": "boolean"
+                },
+                "wantToHappenWithLivingSituation": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/livingSituationOutcome"
+                    }
+                },
+                "wantToHappenWithFamilyHome": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/FamilyHomeOutcome"
+                    }
+                },
+                "anythingElseForCourtToConsider": {
+                    "type": "string"
                 }
             },
             "required": [
@@ -496,6 +636,6 @@
         "relationshipWithRespondent",
         "family",
         "respondentBehaviour",
-        "home"
+        "theHome"
     ]
 }
