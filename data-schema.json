@@ -83,7 +83,7 @@
                 "caseNumber"
             ]
         },
-        "FamilyHomeOutcome": {
+        "familyHomeOutcome": {
             "type": "string",
             "enum": [
                 "respondentToPayRepairsMaintenance",
@@ -193,6 +193,15 @@
                 "other"
             ]
         },
+        "specialMeasures": {
+            "type": "string",
+            "enum": [
+                "separateWaitingRoom",
+                "seperateEntranceExit",
+                "shieldedByScreen",
+                "joinByvideoLink"
+            ]
+        },
         "standardDate": {
             "type": "object",
             "properties": {
@@ -254,6 +263,54 @@
                 "deterredFromPursuingApplication",
                 "respondentDeliberatelyEvadingService"
             ]
+        },
+        "singleSelectOther": {
+            "type": "object",
+            "properties": {
+                "other": {
+                    "type": "string"
+                }
+            },
+            "if": {
+                "properties": {
+                    "value": {
+                        "const": "other"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "then": {
+                "required": [
+                    "other"
+                ]
+            }
+        },
+        "multiSelectOther": {
+            "type": "object",
+            "properties": {
+                "other": {
+                    "type": "string"
+                }
+            },
+            "if": {
+                "properties": {
+                    "value": {
+                        "contains": {
+                            "const": "other"
+                        }
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "then": {
+                "required": [
+                    "other"
+                ]
+            }
         }
     },
     "properties": {
@@ -434,11 +491,14 @@
                 "ceremonyDate": {
                     "$ref": "#/definitions/standardDate"
                 },
-                "relationshipWithRespondent": {
-                    "$ref": "#/definitions/relationshipType"
-                },
-                "relationshipWithRespondentOther": {
-                    "type": "string"
+                "respondentsRelationshipToApplicant": {
+                    "type": "object",
+                    "allOf": [{ "$ref": "#/definitions/singleSelectOther" }],
+                    "properties": {
+                        "value": {
+                            "$ref": "#/definitions/relationshipType"
+                        }
+                    }
                 },
                 "anyChildren": {
                     "type": "boolean"
@@ -447,22 +507,7 @@
             "required": [
                 "relationshipDescription",
                 "anyChildren"
-            ],
-            "if": {
-                "properties": {
-                    "relationshipWithRespondent": {
-                        "const": "other"
-                    }
-                },
-                "required": [
-                    "relationshipWithRespondent"
-                ]
-            },
-            "then": {
-                "required": [
-                    "relationshipWithRespondentOther"
-                ]
-            }
+            ]
         },
         "family": {
             "type": "object",
@@ -527,13 +572,16 @@
                     "$ref": "#/definitions/ukAddress"
                 },
                 "currentlyLivesAtAddress": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/residentAtAddress"
+                    "type": "object",
+                    "allOf": [{ "$ref": "#/definitions/multiSelectOther" }],
+                    "properties": {
+                        "value": {
+                            "type": "array",
+                            "iteme": {
+                                "$ref": "#/definitions/residentAtAddress"
+                            }
+                        }
                     }
-                },
-                "currentlyLivesAtAddressOther": {
-                    "type": "string"
                 },
                 "previouslyLivedAtAddress": {
                     "type": "array",
@@ -569,13 +617,16 @@
                     "type": "boolean"
                 },
                 "namedOnMortgage": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/contractName"
+                    "type": "object",
+                    "allOf": [{ "$ref": "#/definitions/multiSelectOther" }],
+                    "properties": {
+                        "value": {
+                            "type": "array",
+                            "iteme": {
+                                "$ref": "#/definitions/contractName"
+                            }
+                        }
                     }
-                },
-                "namedOnMortgageOther": {
-                    "type": "string"
                 },
                 "mortgageNumber": {
                     "type": "string"
@@ -590,13 +641,16 @@
                     "type": "boolean"
                 },
                 "namedOnRentalAgreement": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/definitions/contractName"
+                    "type": "object",
+                    "allOf": [{ "$ref": "#/definitions/multiSelectOther" }],
+                    "properties": {
+                        "value": {
+                            "type": "array",
+                            "iteme": {
+                                "$ref": "#/definitions/contractName"
+                            }
+                        }
                     }
-                },
-                "namedOnRentalAgreementOther": {
-                    "type": "string"
                 },
                 "landlordName": {
                     "type": "string"
@@ -616,7 +670,7 @@
                 "wantToHappenWithFamilyHome": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/FamilyHomeOutcome"
+                        "$ref": "#/definitions/familyHomeOutcome"
                     }
                 },
                 "anythingElseForCourtToConsider": {
@@ -624,8 +678,56 @@
                 }
             },
             "required": [
-                "applyingForOccupationOrder"
+                "applyingForOccupationOrder",
+                "propertyHasMortgage",
+                "propertyIsRented",
+                "haveHomeRights"
             ]
+        },
+        "goingToCourt": {
+            "type": "object",
+            "properties": {
+                "isInterpreterRequired": {
+                    "type": "boolean"
+                },
+                "interpreterLanguage": {
+                    "type": "string"
+                },
+                "interpreterDialect": {
+                    "type": "string"
+                },
+                "anyDisabilityNeeds": {
+                    "type": "boolean"
+                },
+                "disabilityNeedsDetails": {
+                    "type": "string"
+                },
+                "anySpecialMeasures": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/specialMeasures"
+                    }
+                }
+            },
+            "required": [
+                "isInterpreterRequired",
+                "anyDisabilityNeeds"
+            ],
+            "if": {
+                "properties": {
+                    "anyDisabilityNeeds": {
+                        "const": true
+                    }
+                },
+                "required": [
+                    "anyDisabilityNeeds"
+                ]
+            },
+            "then": {
+                "required": [
+                    "disabilityNeedsDetails"
+                ]
+            }
         }
     },
     "required": [
@@ -636,6 +738,7 @@
         "relationshipWithRespondent",
         "family",
         "respondentBehaviour",
-        "theHome"
+        "theHome",
+        "goingToCourt"
     ]
 }

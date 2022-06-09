@@ -90,8 +90,10 @@
             "month": 9,
             "year": 2017
         },
-        "relationshipWithRespondent": "other",
-        "relationshipWithRespondentOther": "This is more information about the relationship with the respondent",
+        "respondentsRelationshipToApplicant": {
+            "value": "other",
+            "other": "This is more information about the relationship with the respondent"
+        },
         "anyChildren": true
     },
     "family": {
@@ -141,7 +143,56 @@
         ],
         "stopBehaviourAnythingElse": "This is more details about what I want the respondent from doing"
     },
-    "home": {
-        "applyingForOccupationOrder": false
+    "theHome": {
+        "applyingForOccupationOrder": true,
+        "currentlyLivesAtAddress": {
+            "value": [
+                "applicant",
+                "respondent",
+                "other"
+            ],
+            "other": "My friend Sue Johnson also lives at the house"
+        },
+        "childrenSharedResponsibility": [
+            {
+                "fullName": "John Brown",
+                "age": 14
+            },
+            {
+                "fullName": "Bobby Brown",
+                "age": 16
+            }
+        ],
+        "propertyHasMortgage": true,
+        "namedOnMortgage": {
+            "value": [
+                "applicant",
+                "respondent"
+            ]
+        },
+        "mortgageNumber": "ABD-123-xyx",
+        "mortgageLenderName": "Halifax",
+        "mortgageLenderAddress": {
+            "addressUKLine1": "Unit 307",
+            "addressUKLine2": "Phoenix Business Park",
+            "postTown": "Fakenham",
+            "postCode": "NR23 7TC"
+        },
+        "propertyIsRented": false,
+        "haveHomeRights": true,
+        "wantToHappenWithLivingSituation": [
+            "stayInHome",
+            "respondentNotEnterHome"
+        ],
+        "wantToHappenWithFamilyHome": [
+            "respondentToPayRepairsMaintenance",
+            "respondentToPayRentMortgage",
+            "useOfFurnitureOrContents"
+        ]
+    },
+    "goingToCourt": {
+        "isInterpreterRequired": true,
+        "anyDisabilityNeeds": true,
+        "disabilityNeedsDetails": "I am in a wheelchair so need step-free access to court"
     }
 }
