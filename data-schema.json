@@ -356,12 +356,23 @@
                 }
             },
             "required": [
-                "ordersAppliedFor"
+                "ordersAppliedFor",
+                "ordersAppliedWithoutNotice",
+                "bailConditionsOnRespondent"
             ],
-            "dependentRequired": {
-                "ordersAppliedWithoutNotice": ["ordersAppliedWithoutNoticeReason"],
-                "bailConditionsOnRespondent": ["bailConditionsEndDate"]
-            }
+            "allOf": [
+                {
+                    "if": {
+                        "properties": {
+                            "ordersAppliedWithoutNotice": { "const": true }
+                        },
+                        "required": [ "ordersAppliedWithoutNotice" ]
+                    },
+                    "then": {
+                        "required": [ "ordersAppliedWithoutNoticeReason" ]
+                    }
+                }
+            ]
         },
         "applicantDetails": {
             "type": "object",
@@ -679,6 +690,7 @@
             },
             "required": [
                 "applyingForOccupationOrder",
+                "propertySpeciallyAdapted",
                 "propertyHasMortgage",
                 "propertyIsRented",
                 "haveHomeRights"
@@ -715,18 +727,12 @@
             ],
             "if": {
                 "properties": {
-                    "anyDisabilityNeeds": {
-                        "const": true
-                    }
+                    "anyDisabilityNeeds": { "const": true }
                 },
-                "required": [
-                    "anyDisabilityNeeds"
-                ]
+                "required": [ "anyDisabilityNeeds" ]
             },
             "then": {
-                "required": [
-                    "disabilityNeedsDetails"
-                ]
+                "required": [ "disabilityNeedsDetails" ]
             }
         }
     },

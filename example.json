@@ -11,7 +11,7 @@
         "ordersAppliedWithoutNoticeReason": [
             "riskOfSignificantHarm"
         ],
-        "anyBailConditionsOnRespondent": true,
+        "bailConditionsOnRespondent": true,
         "bailConditionsEndDate": {
             "day": 8,
             "month": 4,
@@ -163,6 +163,7 @@
                 "age": 16
             }
         ],
+        "propertySpeciallyAdapted": false,
         "propertyHasMortgage": true,
         "namedOnMortgage": {
             "value": [
