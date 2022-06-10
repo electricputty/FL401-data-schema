@@ -16,7 +16,7 @@ The intention is to make the element names as transparent and human readable as 
 
 ## Structure convention notes
 
-1. All values choses from a set of options are expresses as a Enumeration types
+1. All values chosen from a set of options are expresses as Enumeration types
 2. All addresses are expressed using a sub-schema (#/definitions/ukAddress)
 3. All dates are expressed using a sub-schema (#/definitions/standardDate)
 4. All 'Select + other' values share a common sub-schema (#/definitions/singleSelectOther OR #/definitions/multiSelectOther) so should be expressed as an object. e.g 
