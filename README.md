@@ -43,7 +43,7 @@ Validation has been kept to a minimum. The following rules are enforced:
 
 ## Testing
 
-To test paste schema schema and sample JSON into: https://www.jsonschemavalidator.net/
+To test paste schema and sample JSON into: https://www.jsonschemavalidator.net/
 
 
 
