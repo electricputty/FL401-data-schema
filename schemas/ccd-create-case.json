@@ -1,0 +1,16 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "id": "/schemas/dds-create-case.json",
+    "title": "CCD Create FL401 Case: Version 1.0",
+    "type": "object",
+    "properties": {
+        "metaData": {
+            "caseOrigin": "CourtNav",
+            "courtNavApproved": false,
+            "exParte": true
+        },
+        "fl401": {
+            "$ref": "/schemas/fl401.json"
+        }
+    }
+}

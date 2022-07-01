@@ -1,8 +1,9 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "id": "/schemas/fl401.json",
     "title": "FL401 Data Schema: Version 1.0",
     "type": "object",
-    "definitions": {
+    "$defs": {
         "applicantAgeBracket": {
             "type": "string",
             "enum": [
@@ -131,7 +132,7 @@
                     "type": "string"
                 },
                 "dateOfBirth": {
-                    "$ref": "#/definitions/standardDate"
+                    "$ref": "#/$defs/standardDate"
                 },
                 "relationship": {
                     "type": "string"
@@ -318,7 +319,7 @@
             "type": "object",
             "properties": {
                 "applicantHowOld": {
-                    "$ref": "#/definitions/applicantAgeBracket"
+                    "$ref": "#/$defs/applicantAgeBracket"
                 }
             },
             "required": [
@@ -332,7 +333,7 @@
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/orderType"
+                        "$ref": "#/$defs/orderType"
                     }
                 },
                 "ordersAppliedWithoutNotice": {
@@ -342,14 +343,14 @@
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/withoutNoticeReason"
+                        "$ref": "#/$defs/withoutNoticeReason"
                     }
                 },
                 "bailConditionsOnRespondent": {
                     "type": "boolean"
                 },
                 "bailConditionsEndDate": {
-                    "$ref": "#/definitions/standardDate"
+                    "$ref": "#/$defs/standardDate"
                 },
                 "additionalDetailsForCourt": {
                     "type": "string"
@@ -387,13 +388,13 @@
                     "type": "string"
                 },
                 "applicantDateOfBirth": {
-                    "$ref": "#/definitions/standardDate"
+                    "$ref": "#/$defs/standardDate"
                 },
                 "shareContactDetailsWithRespondent": {
                     "type": "boolean"
                 },
                 "applicantAddress": {
-                    "$ref": "#/definitions/ukAddress"
+                    "$ref": "#/$defs/ukAddress"
                 },
                 "applicantPhoneNumber": {
                     "type": "string"
@@ -406,7 +407,7 @@
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/preferredContact"
+                        "$ref": "#/$defs/preferredContact"
                     }
                 },
                 "applicantContactInstructions": {
@@ -422,7 +423,7 @@
                     "type": "string"
                 },
                 "legalRepresentativeAddress": {
-                    "$ref": "#/definitions/ukAddress"
+                    "$ref": "#/$defs/ukAddress"
                 },
                 "legalRepresentativeDx": {
                     "type": "string"
@@ -460,13 +461,13 @@
                     "type": "string"
                 },
                 "respondentDateOfBirth": {
-                    "$ref": "#/definitions/standardDate"
+                    "$ref": "#/$defs/standardDate"
                 },
                 "respondentLivesWithApplicant": {
                     "type": "boolean"
                 },
                 "respondentAddress": {
-                    "$ref": "#/definitions/ukAddress"
+                    "$ref": "#/$defs/ukAddress"
                 },
                 "respondentPhoneNumber": {
                     "type": "string"
@@ -490,24 +491,24 @@
                     "type": "array",
                     "minItems": 1,
                     "items": {
-                        "$ref": "#/definitions/relationshipDescription"
+                        "$ref": "#/$defs/relationshipDescription"
                     }
                 },
                 "relationshipStartDate": {
-                    "$ref": "#/definitions/standardDate"
+                    "$ref": "#/$defs/standardDate"
                 },
                 "relationshipEndDate": {
-                    "$ref": "#/definitions/standardDate"
+                    "$ref": "#/$defs/standardDate"
                 },
                 "ceremonyDate": {
-                    "$ref": "#/definitions/standardDate"
+                    "$ref": "#/$defs/standardDate"
                 },
                 "respondentsRelationshipToApplicant": {
                     "type": "object",
-                    "allOf": [{ "$ref": "#/definitions/singleSelectOther" }],
+                    "allOf": [{ "$ref": "#/$defs/singleSelectOther" }],
                     "properties": {
                         "value": {
-                            "$ref": "#/definitions/relationshipType"
+                            "$ref": "#/$defs/relationshipType"
                         }
                     }
                 },
@@ -524,12 +525,12 @@
             "type": "object",
             "properties": {
                 "whoApplicationIsFor": {
-                    "$ref": "#/definitions/applicationCover"
+                    "$ref": "#/$defs/applicationCover"
                 },
                 "protectedChildren": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/protectedChild"
+                        "$ref": "#/$defs/protectedChild"
                     }
                 },
                 "anyOngoingCourtProceedings": {
@@ -538,7 +539,7 @@
                 "ongoingCourtProceedings": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/courtProceeding"
+                        "$ref": "#/$defs/courtProceeding"
                     }
                 }
             },
@@ -556,13 +557,13 @@
                 "stopBehaviourTowardsApplicant": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/behaviourTowardsApplicant"
+                        "$ref": "#/$defs/behaviourTowardsApplicant"
                     }
                 },
                 "stopBehaviourTowardsChildren": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/behaviourTowardsChildren"
+                        "$ref": "#/$defs/behaviourTowardsChildren"
                     }
                 },
                 "stopBehaviourAnythingElse": {
@@ -580,16 +581,16 @@
                     "type": "boolean"
                 },
                 "occupationOrderAddress": {
-                    "$ref": "#/definitions/ukAddress"
+                    "$ref": "#/$defs/ukAddress"
                 },
                 "currentlyLivesAtAddress": {
                     "type": "object",
-                    "allOf": [{ "$ref": "#/definitions/multiSelectOther" }],
+                    "allOf": [{ "$ref": "#/$defs/multiSelectOther" }],
                     "properties": {
                         "value": {
                             "type": "array",
                             "iteme": {
-                                "$ref": "#/definitions/residentAtAddress"
+                                "$ref": "#/$defs/residentAtAddress"
                             }
                         }
                     }
@@ -597,25 +598,25 @@
                 "previouslyLivedAtAddress": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/previousOrIntendedResidentAtAddress"
+                        "$ref": "#/$defs/previousOrIntendedResidentAtAddress"
                     }
                 },
                 "intendedToLiveAtAddress": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/previousOrIntendedResidentAtAddress"
+                        "$ref": "#/$defs/previousOrIntendedResidentAtAddress"
                     }
                 },
                 "childrenSharedResponsibility": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/childAtAddress"
+                        "$ref": "#/$defs/childAtAddress"
                     }
                 },
                 "childrenApplicantResponsibility": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/childAtAddress"
+                        "$ref": "#/$defs/childAtAddress"
                     }
                 },
                 "propertySpeciallyAdapted": {
@@ -629,12 +630,12 @@
                 },
                 "namedOnMortgage": {
                     "type": "object",
-                    "allOf": [{ "$ref": "#/definitions/multiSelectOther" }],
+                    "allOf": [{ "$ref": "#/$defs/multiSelectOther" }],
                     "properties": {
                         "value": {
                             "type": "array",
                             "iteme": {
-                                "$ref": "#/definitions/contractName"
+                                "$ref": "#/$defs/contractName"
                             }
                         }
                     }
@@ -646,19 +647,19 @@
                     "type": "string"
                 },
                 "mortgageLenderAddress": {
-                    "$ref": "#/definitions/ukAddress"
+                    "$ref": "#/$defs/ukAddress"
                 },
                 "propertyIsRented":  {
                     "type": "boolean"
                 },
                 "namedOnRentalAgreement": {
                     "type": "object",
-                    "allOf": [{ "$ref": "#/definitions/multiSelectOther" }],
+                    "allOf": [{ "$ref": "#/$defs/multiSelectOther" }],
                     "properties": {
                         "value": {
                             "type": "array",
                             "iteme": {
-                                "$ref": "#/definitions/contractName"
+                                "$ref": "#/$defs/contractName"
                             }
                         }
                     }
@@ -667,7 +668,7 @@
                     "type": "string"
                 },
                 "landlordAddress": {
-                    "$ref": "#/definitions/ukAddress"
+                    "$ref": "#/$defs/ukAddress"
                 },
                 "haveHomeRights": {
                     "type": "boolean"
@@ -675,13 +676,13 @@
                 "wantToHappenWithLivingSituation": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/livingSituationOutcome"
+                        "$ref": "#/$defs/livingSituationOutcome"
                     }
                 },
                 "wantToHappenWithFamilyHome": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/familyHomeOutcome"
+                        "$ref": "#/$defs/familyHomeOutcome"
                     }
                 },
                 "anythingElseForCourtToConsider": {
@@ -717,7 +718,7 @@
                 "anySpecialMeasures": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/definitions/specialMeasures"
+                        "$ref": "#/$defs/specialMeasures"
                     }
                 }
             },
