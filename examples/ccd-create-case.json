@@ -2,7 +2,11 @@
     "metaData": {
         "caseOrigin": "CourtNav",
         "courtNavApproved": true,
-        "exParte": false
+        "exParte": false,
+        "applicantGender": {
+            "value": "other",
+           "other": "Polygender"
+       }
     },
     "fl401": {
         "beforeStart": {
@@ -48,7 +52,8 @@
             ],
             "applicantContactInstructions": "These are the applicant contact instructions",
             "applicantHasLegalRepresentative": true,
-            "legalRepresentativeName": "Johanna Marshall",
+            "legalRepresentativeFirstName": "Johanna",
+            "legalRepresentativeLastName": "Marshall",
             "legalRepresentativeFirm": "J M G Legal",
             "legalRepresentativeAddress": {
                 "addressUKLine1": "The Guild Building",

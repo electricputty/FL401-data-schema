@@ -1,0 +1,200 @@
+{
+    "beforeStart": {
+        "applicantHowOld": "sixteenToEighteen"
+    },
+    "situation": {
+        "ordersAppliedFor": [
+            "nonMolestationOrder",
+            "occupationOrder"
+        ],
+        "ordersAppliedWithoutNotice": true,
+        "ordersAppliedWithoutNoticeReason": [
+            "riskOfSignificantHarm"
+        ],
+        "bailConditionsOnRespondent": true,
+        "bailConditionsEndDate": {
+            "day": 8,
+            "month": 4,
+            "year": 2022
+        },
+        "additionalDetailsForCourt": "These are some additional detals for the court"
+    },
+    "applicantDetails": {
+        "applicantFirstName": "Jane",
+        "applicantLastName": "Smith",
+        "applicantOtherNames": "Also known as Jane Brown",
+        "applicantDateOfBirth": {
+            "day": 19,
+            "month": 10,
+            "year": 1988
+        },
+        "shareContactDetailsWithRespondent": false,
+        "applicantAddress": {
+            "addressUKLine1": "105 Earlham Road",
+            "postTown": "Norwich",
+            "postCode": "NR2 7TE"
+        },
+        "applicantPhoneNumber": "01603 789541",
+        "applicantEmailAddress": "Jane.Smith@emailprovider.com",
+        "applicantPreferredContact": [
+            "phone",
+            "email"
+        ],
+        "applicantContactInstructions": "These are the applicant contact instructions",
+        "applicantHasLegalRepresentative": true,
+        "legalRepresentativeFirstName": "Johanna",
+        "legalRepresentativeLastName": "Marshall",
+        "legalRepresentativeFirm": "J M G Legal",
+        "legalRepresentativeAddress": {
+            "addressUKLine1": "The Guild Building",
+            "addressUKLine2": "108 Rouen Road",
+            "postTown": "Norwich",
+            "postCode": "NR1 9YU"
+        }
+    },
+    "respondentDetails": {
+        "respondentFirstName": "Steve",
+        "respondentLastName": "Jones",
+        "respondentOtherNames": "aka Ben Johnson",
+        "respondentDateOfBirth": {
+            "day": 16,
+            "month": 9,
+            "year": 1986
+        },
+        "respondentLivesWithApplicant": false,
+        "respondentAddress": {
+            "addressUKLine1": "Archaway Cottage",
+            "addressUKLine2": "The paddock",
+            "addressUKLine3": "Fakenham",
+            "postTown": "Norwich",
+            "postCode": "NR22 4FN"
+        },
+        "respondentPhoneNumber": "07899 112112",
+        "respondentEmailAddress": "stevo@serviceprovide.net"
+    },
+    "relationshipWithRespondent": {
+        "relationshipDescription": [
+            "formerlyEngagedOrProposed"
+        ],
+        "relationshipStartDate": {
+            "day": 5,
+            "month": 3,
+            "year": 2012
+        },
+        "relationshipEndDate": {
+            "day": 18,
+            "month": 12,
+            "year": 2021
+        },
+        "ceremonyDate": {
+            "day": 12,
+            "month": 9,
+            "year": 2017
+        },
+        "respondentsRelationshipToApplicant": {
+            "value": "other",
+            "other": "This is more information about the relationship with the respondent"
+        },
+        "anyChildren": true
+    },
+    "family": {
+        "whoApplicationIsFor": "applicantOnly",
+        "protectedChildren": [
+            {
+                "fullName": "Bobby Brown",
+                "dateOfBirth": {
+                    "day": 12,
+                    "month": 5,
+                    "year": 2011
+                },
+                "relationship": "mother",
+                "parentalResponsibility": true,
+                "respondentRelationship": "father"
+            },
+            {
+                "fullName": "John Brown",
+                "dateOfBirth": {
+                    "day": 21,
+                    "month": 7,
+                    "year": 2013
+                },
+                "relationship": "mother",
+                "parentalResponsibility": true,
+                "respondentRelationship": "father"
+            }
+        ],
+        "anyOngoingCourtProceedings": true,
+        "ongoingCourtProceedings": [
+            {
+                "nameOfCourt": "Hove Crown Court",
+                "caseNumber": "abc-124",
+                "caseTypeAndOtherInfo": "This is some other info"
+            }
+        ]
+    },
+    "respondentBehaviour": {
+        "applyingForMonMolestationOrder": true,
+        "stopBehaviourTowardsApplicant": [
+            "beingViolentOrThreatening",
+            "damagingPossessions",
+            "comingNearHome"
+        ],
+        "stopBehaviourTowardsChildren": [
+            "goingNearSchoolNursery"
+        ],
+        "stopBehaviourAnythingElse": "This is more details about what I want the respondent from doing"
+    },
+    "theHome": {
+        "applyingForOccupationOrder": true,
+        "currentlyLivesAtAddress": {
+            "value": [
+                "applicant",
+                "respondent",
+                "other"
+            ],
+            "other": "My friend Sue Johnson also lives at the house"
+        },
+        "childrenSharedResponsibility": [
+            {
+                "fullName": "John Brown",
+                "age": 14
+            },
+            {
+                "fullName": "Bobby Brown",
+                "age": 16
+            }
+        ],
+        "propertySpeciallyAdapted": false,
+        "propertyHasMortgage": true,
+        "namedOnMortgage": {
+            "value": [
+                "applicant",
+                "respondent"
+            ]
+        },
+        "mortgageNumber": "ABD-123-xyx",
+        "mortgageLenderName": "Halifax",
+        "mortgageLenderAddress": {
+            "addressUKLine1": "Unit 307",
+            "addressUKLine2": "Phoenix Business Park",
+            "postTown": "Fakenham",
+            "postCode": "NR23 7TC"
+        },
+        "propertyIsRented": false,
+        "haveHomeRights": true,
+        "wantToHappenWithLivingSituation": [
+            "stayInHome",
+            "respondentNotEnterHome"
+        ],
+        "wantToHappenWithFamilyHome": [
+            "respondentToPayRepairsMaintenance",
+            "respondentToPayRentMortgage",
+            "useOfFurnitureOrContents"
+        ]
+    },
+    "goingToCourt": {
+        "isInterpreterRequired": true,
+        "anyDisabilityNeeds": true,
+        "disabilityNeedsDetails": "I am in a wheelchair so need step-free access to court"
+    }
+}

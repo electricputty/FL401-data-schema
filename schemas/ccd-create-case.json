@@ -1,16 +1,67 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "id": "/schemas/dds-create-case.json",
     "title": "CCD Create FL401 Case: Version 1.0",
     "type": "object",
+    "$defs": {
+        "gender": {
+            "type": "string",
+            "enum": [
+                "Male",
+                "Female",
+                "Non-binary",
+                "Transgender",
+                "other"
+            ]
+        },
+        "singleSelectOther": {
+            "type": "object",
+            "properties": {
+                "other": {
+                    "type": "string"
+                }
+            },
+            "if": {
+                "properties": {
+                    "value": {
+                        "const": "other"
+                    }
+                },
+                "required": [
+                    "value"
+                ]
+            },
+            "then": {
+                "required": [
+                    "other"
+                ]
+            }
+        }
+    },
     "properties": {
         "metaData": {
             "caseOrigin": {
                 "type": "string"
-            }
+            },
+            "applicantGender": {
+                "type": "object",
+                "allOf": [{ "$ref": "#/$defs/singleSelectOther" }],
+                "properties": {
+                    "value": {
+                        "$ref": "#/$defs/gender"
+                    }
+                }
+            },
+            "required": [
+                "caseOrigin",
+                "applicantGender"
+            ]
         },
         "fl401": {
             "$ref": "/schemas/fl401.json"
         }
-    }
+    },
+    "required": [
+        "metaData",
+        "fl401"
+    ]
 }

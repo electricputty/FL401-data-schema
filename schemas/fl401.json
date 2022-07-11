@@ -1,6 +1,5 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "id": "/schemas/fl401.json",
     "title": "FL401 Data Schema: Version 1.0",
     "type": "object",
     "$defs": {
@@ -416,7 +415,10 @@
                 "applicantHasLegalRepresentative": {
                     "type": "boolean"
                 },
-                "legalRepresentativeName": {
+                "legalRepresentativeFirstName": {
+                    "type": "string"
+                },
+                "legalRepresentativeLastName": {
                     "type": "string"
                 },
                 "legalRepresentativeFirm": {
