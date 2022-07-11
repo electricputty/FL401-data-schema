@@ -39,15 +39,18 @@
     },
     "properties": {
         "metaData": {
-            "caseOrigin": {
-                "type": "string"
-            },
-            "applicantGender": {
-                "type": "object",
-                "allOf": [{ "$ref": "#/$defs/singleSelectOther" }],
-                "properties": {
-                    "value": {
-                        "$ref": "#/$defs/gender"
+            "type": "object",
+            "properties": {
+                "caseOrigin": {
+                    "type": "string"
+                },
+                "applicantGender": {
+                    "type": "object",
+                    "allOf": [{ "$ref": "#/$defs/singleSelectOther" }],
+                    "properties": {
+                        "value": {
+                            "$ref": "#/$defs/gender"
+                        }
                     }
                 }
             },
