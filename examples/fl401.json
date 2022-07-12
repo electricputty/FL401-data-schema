@@ -11,6 +11,7 @@
         "ordersAppliedWithoutNoticeReason": [
             "riskOfSignificantHarm"
         ],
+        "ordersAppliedWithoutNoticeReasonDetails": "This is more information about the answers to ordersAppliedWithoutNoticeReason which explains why these things might happen",
         "bailConditionsOnRespondent": true,
         "bailConditionsEndDate": {
             "day": 8,

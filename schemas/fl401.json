@@ -345,6 +345,9 @@
                         "$ref": "#/$defs/withoutNoticeReason"
                     }
                 },
+                "ordersAppliedWithoutNoticeReasonDetails": {
+                    "type": "string"
+                },
                 "bailConditionsOnRespondent": {
                     "type": "boolean"
                 },
