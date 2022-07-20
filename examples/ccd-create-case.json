@@ -4,7 +4,10 @@
         "courtNavApproved": true,
         "exParte": false,
         "applicantGender": {
-            "value": "other",
+            "value": [
+                "Transgender",
+                "other"
+            ],
             "other": "Polygender"
        }
     },

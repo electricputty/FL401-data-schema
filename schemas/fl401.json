@@ -601,16 +601,10 @@
                     }
                 },
                 "previouslyLivedAtAddress": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/$defs/previousOrIntendedResidentAtAddress"
-                    }
+                    "$ref": "#/$defs/previousOrIntendedResidentAtAddress"
                 },
                 "intendedToLiveAtAddress": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/$defs/previousOrIntendedResidentAtAddress"
-                    }
+                    "$ref": "#/$defs/previousOrIntendedResidentAtAddress"
                 },
                 "childrenSharedResponsibility": {
                     "type": "array",
