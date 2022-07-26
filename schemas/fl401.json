@@ -472,6 +472,7 @@
             "required": [
                 "applicantFirstName",
                 "applicantLastName",
+                "applicantGender",
                 "applicantDateOfBirth",
                 "shareContactDetailsWithRespondent",
                 "applicantAddress",
