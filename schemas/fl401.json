@@ -18,6 +18,16 @@
                 "applicantAndChildren"
             ]
         },
+        "gender": {
+            "type": "string",
+            "enum": [
+                "Male",
+                "Female",
+                "Non-binary",
+                "Transgender",
+                "other"
+            ]
+        },
         "behaviourTowardsApplicant": {
             "type": "string",
             "enum": [
@@ -388,6 +398,21 @@
                 },
                 "applicantOtherNames": {
                     "type": "string"
+                },
+                "applicantGender": {
+                    "type": "object",
+                    "allOf": [{ "$ref": "#/$defs/multiSelectOther" }],
+                    "properties": {
+                        "value": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/gender"
+                            }
+                        },
+                        "other": {
+                            "type": "string"
+                        }
+                    }
                 },
                 "applicantDateOfBirth": {
                     "$ref": "#/$defs/standardDate"

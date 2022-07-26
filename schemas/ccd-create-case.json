@@ -335,23 +335,10 @@
                 },
                 "exParte": {
                     "type": "boolean"
-                },
-                "applicantGender": {
-                    "type": "object",
-                    "allOf": [{ "$ref": "#/$defs/multiSelectOther" }],
-                    "properties": {
-                        "value": {
-                            "type": "array",
-                            "iteme": {
-                                "$ref": "#/$defs/gender"
-                            }
-                        }
-                    }
                 }
             },
             "required": [
-                "caseOrigin",
-                "applicantGender"
+                "caseOrigin"
             ]
         },
         "fl401": {
@@ -431,6 +418,21 @@
                         },
                         "applicantOtherNames": {
                             "type": "string"
+                        },
+                        "applicantGender": {
+                            "type": "object",
+                            "allOf": [{ "$ref": "#/$defs/multiSelectOther" }],
+                            "properties": {
+                                "value": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/$defs/gender"
+                                    }
+                                },
+                                "other": {
+                                    "type": "string"
+                                }
+                            }
                         },
                         "applicantDateOfBirth": {
                             "$ref": "#/$defs/standardDate"
