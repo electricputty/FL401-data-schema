@@ -29,7 +29,8 @@
                 "damagingHome",
                 "enteringHome",
                 "comingNearHome",
-                "comingNearWork"
+                "comingNearWork",
+                "seeDraftOrder"
             ]
         },
         "behaviourTowardsChildren": {
@@ -39,7 +40,8 @@
                 "harrasingOrIntimidating",
                 "publishingAboutChildren",
                 "contactingDirectly",
-                "goingNearSchoolNursery"
+                "goingNearSchoolNursery",
+                "seeDraftOrder"
             ]
         },
         "childAtAddress": {
