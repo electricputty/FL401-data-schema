@@ -76,7 +76,10 @@
                 "caseNumber": {
                     "type": "string"
                 },
-                "caseTypeAndOtherInfo": {
+                "caseType": {
+                    "type": "string"
+                },
+                "caseDetails": {
                     "type": "string"
                 }
             },
@@ -766,6 +769,9 @@
                             "items": {
                                 "$ref": "#/$defs/specialMeasures"
                             }
+                        },
+                        "courtSpecialRequirements": {
+                            "type": "string"
                         }
                     },
                     "required": [
