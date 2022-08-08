@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "CCD Create FL401 Case: Version 1.0",
+    "title": "CCD Create FL401 Case: Version 0.9",
     "type": "object",
     "$defs": {
         "applicantAgeBracket": {
