@@ -266,6 +266,13 @@
                 "postCode"
             ]
         },
+        "declarationTypes": {
+            "type": "string",
+            "enum": [
+                "applicantConfirm",
+                "legalAidConfirm"
+            ]
+        },
         "withoutNoticeReason": {
             "type": "string",
             "enum": [
@@ -760,6 +767,20 @@
             "then": {
                 "required": [ "disabilityNeedsDetails" ]
             }
+        },
+        "statementOfTruth": {
+            "type": "object",
+            "properties": {
+                "declaration": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/$defs/declarationTypes"
+                    }
+                }
+            },
+            "required": [
+                "declaration"
+            ]
         }
     },
     "required": [
@@ -771,6 +792,7 @@
         "family",
         "respondentBehaviour",
         "theHome",
-        "goingToCourt"
+        "goingToCourt",
+        "statementOfTruth"
     ]
 }

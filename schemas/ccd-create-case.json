@@ -279,6 +279,13 @@
                 "respondentDeliberatelyEvadingService"
             ]
         },
+        "declarationTypes": {
+            "type": "string",
+            "enum": [
+                "applicantConfirm",
+                "legalAidConfirm"
+            ]
+        },
         "singleSelectOther": {
             "type": "object",
             "properties": {
@@ -787,6 +794,20 @@
                     "then": {
                         "required": [ "disabilityNeedsDetails" ]
                     }
+                },
+                "statementOfTruth": {
+                    "type": "object",
+                    "properties": {
+                        "declaration": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/declarationTypes"
+                            }
+                        }
+                    },
+                    "required": [
+                        "declaration"
+                    ]
                 }
             },
             "required": [
@@ -798,7 +819,8 @@
                 "family",
                 "respondentBehaviour",
                 "theHome",
-                "goingToCourt"
+                "goingToCourt",
+                "statementOfTruth"
             ]
         }
     },
