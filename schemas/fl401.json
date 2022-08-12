@@ -266,7 +266,7 @@
                 "postCode"
             ]
         },
-        "declarationTypes": {
+        "consentTypes": {
             "type": "string",
             "enum": [
                 "applicantConfirm",
@@ -774,7 +774,7 @@
                 "declaration": {
                     "type": "array",
                     "items": {
-                        "$ref": "#/$defs/declarationTypes"
+                        "$ref": "#/$defs/consentTypes"
                     }
                 }
             },
