@@ -346,8 +346,8 @@
                 "courtNavApproved": {
                     "type": "boolean"
                 },
-                "exParte": {
-                    "type": "boolean"
+                "numberOfAttachments": {
+                    "type": "integer"
                 }
             },
             "required": [
