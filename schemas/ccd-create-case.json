@@ -102,8 +102,6 @@
             "enum": [
                 "Male",
                 "Female",
-                "Non-binary",
-                "Transgender",
                 "other"
             ]
         },
