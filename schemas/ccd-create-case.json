@@ -808,7 +808,7 @@
                             "type": "string"
                         },
                         "signatureDate": {
-                            "type": "Date"
+                            "$ref": "#/$defs/standardDate"
                         }
                     },
                     "required": [
