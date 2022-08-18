@@ -84,13 +84,17 @@
                 "caseNumber": {
                     "type": "string"
                 },
-                "caseTypeAndOtherInfo": {
+                "caseType": {
+                    "type": "string"
+                },
+                "caseDetails": {
                     "type": "string"
                 }
             },
             "required": [
                 "nameOfCourt",
-                "caseNumber"
+                "caseNumber",
+                "caseType"
             ]
         },
         "familyHomeOutcome": {
@@ -583,9 +587,17 @@
                     "type": "boolean"
                 },
                 "ongoingCourtProceedings": {
-                    "type": "array",
-                    "items": {
-                        "$ref": "#/$defs/courtProceeding"
+                    "properties": {
+                        "id": {
+                            "type": "string",
+                            "format": "uuid"
+                        },
+                        "value": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/courtProceeding"
+                            }
+                        }
                     }
                 }
             },
