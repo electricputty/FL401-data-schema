@@ -803,10 +803,18 @@
                             "items": {
                                 "$ref": "#/$defs/consentTypes"
                             }
+                        },
+                        "signature": {
+                            "type": "string"
+                        },
+                        "signatureDate": {
+                            "type": "Date"
                         }
                     },
                     "required": [
-                        "declaration"
+                        "declaration",
+                        "signature",
+                        "signatureDate"
                     ]
                 }
             },
