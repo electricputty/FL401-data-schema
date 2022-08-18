@@ -590,9 +590,17 @@
                             "$ref": "#/$defs/applicationCover"
                         },
                         "protectedChildren": {
-                            "type": "array",
-                            "items": {
-                                "$ref": "#/$defs/protectedChild"
+                            "properties": {
+                                "id": {
+                                    "type": "string",
+                                    "format": "uuid"
+                                },
+                                "value": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/$defs/protectedChild"
+                                    }
+                                }
                             }
                         },
                         "anyOngoingCourtProceedings": {
