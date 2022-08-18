@@ -551,8 +551,7 @@
                     "type": "object",
                     "properties": {
                         "relationshipDescription": {
-                            "type": "array",
-                            "minItems": 1,
+                            "type": "string",
                             "items": {
                                 "$ref": "#/$defs/relationshipDescription"
                             }
