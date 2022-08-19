@@ -349,7 +349,8 @@
                 }
             },
             "required": [
-                "caseOrigin"
+                "caseOrigin",
+                "numberOfAttachments"
             ]
         },
         "fl401": {
