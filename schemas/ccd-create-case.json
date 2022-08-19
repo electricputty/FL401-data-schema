@@ -435,7 +435,7 @@
                             "allOf": [{ "$ref": "#/$defs/multiSelectOther" }],
                             "properties": {
                                 "value": {
-                                    "type": "array",
+                                    "type": "string",
                                     "items": {
                                         "$ref": "#/$defs/gender"
                                     }
