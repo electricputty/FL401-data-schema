@@ -821,6 +821,9 @@
                         "signature": {
                             "type": "string"
                         },
+                        "signatureFullName": {
+                            "type": "string"
+                        },
                         "signatureDate": {
                             "$ref": "#/$defs/standardDate"
                         }
@@ -828,7 +831,8 @@
                     "required": [
                         "declaration",
                         "signature",
-                        "signatureDate"
+                        "signatureDate",
+                        "signatureFullName"
                     ]
                 }
             },
