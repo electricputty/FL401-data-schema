@@ -120,7 +120,9 @@
       "declaration": ["applicantConfirm"],
       "signature": "Ken Graham",
       "signatureFullName": "Ken Graham",
-      "signatureDate": { "day": 22, "month": 8, "year": 2022 }
+      "signatureDate": { "day": 22, "month": 8, "year": 2022 },
+      "representativeFirmName": "courtnav_application",
+      "representativePositionHeld": "courtnav_application"
     }
   }
 }

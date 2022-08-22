@@ -798,13 +798,20 @@
                 },
                 "signatureDate": {
                     "$ref": "#/$defs/standardDate"
-                }
+                },
+                "representativeFirmName": {
+                    "type": "string"
+                },
+                "representativePositionHeld": {
+                    "type": "string"
             },
             "required": [
                 "declaration",
                 "signature",
                 "signatureDate",
-                "signatureFullName"
+                "signatureFullName",
+                "representativeFirmName",
+                "representativePositionHeld"
             ]
         }
     },
