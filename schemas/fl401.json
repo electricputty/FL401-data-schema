@@ -37,7 +37,8 @@
                 "damagingHome",
                 "enteringHome",
                 "comingNearHome",
-                "comingNearWork"
+                "comingNearWork",
+                "seeDraftOrder"
             ]
         },
         "behaviourTowardsChildren": {
@@ -47,7 +48,8 @@
                 "harrasingOrIntimidating",
                 "publishingAboutChildren",
                 "contactingDirectly",
-                "goingNearSchoolNursery"
+                "goingNearSchoolNursery",
+                "seeDraftOrder"
             ]
         },
         "childAtAddress": {
@@ -410,16 +412,10 @@
                 },
                 "applicantGender": {
                     "type": "object",
-                    "allOf": [{ "$ref": "#/$defs/multiSelectOther" }],
+                    "allOf": [{ "$ref": "#/$defs/singleSelectOther" }],
                     "properties": {
                         "value": {
-                            "type": "string",
-                            "items": {
-                                "$ref": "#/$defs/gender"
-                            }
-                        },
-                        "other": {
-                            "type": "string"
+                            "$ref": "#/$defs/gender"
                         }
                     }
                 },
