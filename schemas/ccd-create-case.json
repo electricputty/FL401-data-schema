@@ -433,16 +433,10 @@
                         },
                         "applicantGender": {
                             "type": "object",
-                            "allOf": [{ "$ref": "#/$defs/multiSelectOther" }],
+                            "allOf": [{ "$ref": "#/$defs/singleSelectOther" }],
                             "properties": {
                                 "value": {
-                                    "type": "string",
-                                    "items": {
-                                        "$ref": "#/$defs/gender"
-                                    }
-                                },
-                                "other": {
-                                    "type": "string"
+                                    "$ref": "#/$defs/gender"
                                 }
                             }
                         },
