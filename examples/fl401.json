@@ -1,201 +1,119 @@
 {
-    "beforeStart": {
-        "applicantHowOld": "sixteenToEighteen"
+  "beforeStart": { "applicantHowOld": "eighteenOrOlder" },
+  "situation": {
+    "ordersAppliedFor": ["nonMolestationOrder"],
+    "ordersAppliedWithoutNotice": true,
+    "ordersAppliedWithoutNoticeReason": [
+      "riskOfSignificantHarm",
+      "deterredFromPursuingApplication",
+      "respondentDeliberatelyEvadingService"
+    ],
+    "ordersAppliedWithoutNoticeReasonDetails": "Est eius ut enim eveniet repellat. Rerum eos magni nobis nisi. Aperiam similique repudiandae omnis nobis tenetur. Autem voluptates autem ipsa delectus harum., Reiciendis ullam mollitia quod quia harum minus totam nulla. Beatae cum error minus corporis nemo. Aperiam iste autem molestiae illum molestiae blanditiis., Aut optio et commodi quo. Rerum ut iste qui vero exercitationem illum numquam. Occaecati enim aut est repudiandae. Optio occaecati aperiam sit eligendi officiis rem.",
+    "bailConditionsOnRespondent": false,
+    "additionalDetailsForCourt": "Dolor voluptatum ut qui eligendi. Deserunt et sit autem est. Quod adipisci ipsam enim voluptas."
+  },
+  "applicantDetails": {
+    "applicantFirstName": "Ken",
+    "applicantLastName": "Graham",
+    "applicantOtherNames": "Adam",
+    "applicantGender": { "value": "other", "other": "Transgender" },
+    "applicantDateOfBirth": { "day": 19, "month": 8, "year": 1947 },
+    "shareContactDetailsWithRespondent": true,
+    "applicantAddress": {
+      "addressUKLine1": "1 The Mews",
+      "addressUKLine2": "High Street",
+      "addressUKLine3": "East Sussex",
+      "postTown": "Brighton",
+      "postCode": "BN3 2BE"
     },
-    "situation": {
-        "ordersAppliedFor": [
-            "nonMolestationOrder",
-            "occupationOrder"
-        ],
-        "ordersAppliedWithoutNotice": true,
-        "ordersAppliedWithoutNoticeReason": [
-            "riskOfSignificantHarm"
-        ],
-        "ordersAppliedWithoutNoticeReasonDetails": "This is more information about the answers to ordersAppliedWithoutNoticeReason which explains why these things might happen",
-        "bailConditionsOnRespondent": true,
-        "bailConditionsEndDate": {
-            "day": 8,
-            "month": 4,
-            "year": 2022
-        },
-        "additionalDetailsForCourt": "These are some additional detals for the court"
+    "applicantEmailAddress": "client@example.org",
+    "applicantPreferredContact": ["email"],
+    "applicantHasLegalRepresentative": true
+  },
+  "respondentDetails": {
+    "respondentFirstName": "James",
+    "respondentLastName": "Smith",
+    "respondentDateOfBirth": { "day": 19, "month": 8, "year": 1968 },
+    "respondentLivesWithApplicant": true,
+    "respondentAddress": {
+      "addressUKLine1": "1 The Mews",
+      "addressUKLine2": "High Street",
+      "addressUKLine3": "Eat Sussex",
+      "postTown": "Brighton",
+      "postCode": "BN3 2BE"
     },
-    "applicantDetails": {
-        "applicantFirstName": "Jane",
-        "applicantLastName": "Smith",
-        "applicantOtherNames": "Also known as Jane Brown",
-        "applicantDateOfBirth": {
-            "day": 19,
-            "month": 10,
-            "year": 1988
-        },
-        "shareContactDetailsWithRespondent": false,
-        "applicantAddress": {
-            "addressUKLine1": "105 Earlham Road",
-            "postTown": "Norwich",
-            "postCode": "NR2 7TE"
-        },
-        "applicantPhoneNumber": "01603 789541",
-        "applicantEmailAddress": "Jane.Smith@emailprovider.com",
-        "applicantPreferredContact": [
-            "phone",
-            "email"
-        ],
-        "applicantContactInstructions": "These are the applicant contact instructions",
-        "applicantHasLegalRepresentative": true,
-        "legalRepresentativeFirstName": "Johanna",
-        "legalRepresentativeLastName": "Marshall",
-        "legalRepresentativeFirm": "J M G Legal",
-        "legalRepresentativeAddress": {
-            "addressUKLine1": "The Guild Building",
-            "addressUKLine2": "108 Rouen Road",
-            "postTown": "Norwich",
-            "postCode": "NR1 9YU"
+    "respondentPhoneNumber": "+44(0)8534 090181",
+    "respondentEmailAddress": "isaac62@example.net"
+  },
+  "relationshipWithRespondent": {
+    "relationshipDescription": "formerlyMarriedOrCivil",
+    "relationshipStartDate": { "day": 19, "month": 8, "year": 1949 },
+    "relationshipEndDate": { "day": 19, "month": 8, "year": 1983 },
+    "ceremonyDate": { "day": 19, "month": 8, "year": 1974 },
+    "anyChildren": true
+  },
+  "family": {
+    "whoApplicationIsFor": "applicantAndChildren",
+    "protectedChildren": [
+      {
+        "id": "53b134d4-93e2-45a1-9dde-9013dace6fc3",
+        "value": {
+          "fullName": "Jo Smith",
+          "dateOfBirth": { "day": 19, "month": 8, "year": 2015 },
+          "relationship": "Daughter",
+          "parentalResponsibility": true,
+          "respondentRelationship": "Father"
         }
-    },
-    "respondentDetails": {
-        "respondentFirstName": "Steve",
-        "respondentLastName": "Jones",
-        "respondentOtherNames": "aka Ben Johnson",
-        "respondentDateOfBirth": {
-            "day": 16,
-            "month": 9,
-            "year": 1986
-        },
-        "respondentLivesWithApplicant": false,
-        "respondentAddress": {
-            "addressUKLine1": "Archaway Cottage",
-            "addressUKLine2": "The paddock",
-            "addressUKLine3": "Fakenham",
-            "postTown": "Norwich",
-            "postCode": "NR22 4FN"
-        },
-        "respondentPhoneNumber": "07899 112112",
-        "respondentEmailAddress": "stevo@serviceprovide.net"
-    },
-    "relationshipWithRespondent": {
-        "relationshipDescription": [
-            "formerlyEngagedOrProposed"
-        ],
-        "relationshipStartDate": {
-            "day": 5,
-            "month": 3,
-            "year": 2012
-        },
-        "relationshipEndDate": {
-            "day": 18,
-            "month": 12,
-            "year": 2021
-        },
-        "ceremonyDate": {
-            "day": 12,
-            "month": 9,
-            "year": 2017
-        },
-        "respondentsRelationshipToApplicant": {
-            "value": "other",
-            "other": "This is more information about the relationship with the respondent"
-        },
-        "anyChildren": true
-    },
-    "family": {
-        "whoApplicationIsFor": "applicantOnly",
-        "protectedChildren": [
-            {
-                "fullName": "Bobby Brown",
-                "dateOfBirth": {
-                    "day": 12,
-                    "month": 5,
-                    "year": 2011
-                },
-                "relationship": "mother",
-                "parentalResponsibility": true,
-                "respondentRelationship": "father"
-            },
-            {
-                "fullName": "John Brown",
-                "dateOfBirth": {
-                    "day": 21,
-                    "month": 7,
-                    "year": 2013
-                },
-                "relationship": "mother",
-                "parentalResponsibility": true,
-                "respondentRelationship": "father"
-            }
-        ],
-        "anyOngoingCourtProceedings": true,
-        "ongoingCourtProceedings": [
-            {
-                "nameOfCourt": "Hove Crown Court",
-                "caseNumber": "abc-124",
-                "caseTypeAndOtherInfo": "This is some other info"
-            }
-        ]
-    },
-    "respondentBehaviour": {
-        "applyingForMonMolestationOrder": true,
-        "stopBehaviourTowardsApplicant": [
-            "beingViolentOrThreatening",
-            "damagingPossessions",
-            "comingNearHome"
-        ],
-        "stopBehaviourTowardsChildren": [
-            "goingNearSchoolNursery"
-        ],
-        "stopBehaviourAnythingElse": "This is more details about what I want the respondent from doing"
-    },
-    "theHome": {
-        "applyingForOccupationOrder": true,
-        "currentlyLivesAtAddress": {
-            "value": [
-                "applicant",
-                "respondent",
-                "other"
-            ],
-            "other": "My friend Sue Johnson also lives at the house"
-        },
-        "childrenSharedResponsibility": [
-            {
-                "fullName": "John Brown",
-                "age": 14
-            },
-            {
-                "fullName": "Bobby Brown",
-                "age": 16
-            }
-        ],
-        "propertySpeciallyAdapted": false,
-        "propertyHasMortgage": true,
-        "namedOnMortgage": {
-            "value": [
-                "applicant",
-                "respondent"
-            ]
-        },
-        "mortgageNumber": "ABD-123-xyx",
-        "mortgageLenderName": "Halifax",
-        "mortgageLenderAddress": {
-            "addressUKLine1": "Unit 307",
-            "addressUKLine2": "Phoenix Business Park",
-            "postTown": "Fakenham",
-            "postCode": "NR23 7TC"
-        },
-        "propertyIsRented": false,
-        "haveHomeRights": true,
-        "wantToHappenWithLivingSituation": [
-            "stayInHome",
-            "respondentNotEnterHome"
-        ],
-        "wantToHappenWithFamilyHome": [
-            "respondentToPayRepairsMaintenance",
-            "respondentToPayRentMortgage",
-            "useOfFurnitureOrContents"
-        ]
-    },
-    "goingToCourt": {
-        "isInterpreterRequired": true,
-        "anyDisabilityNeeds": true,
-        "disabilityNeedsDetails": "I am in a wheelchair so need step-free access to court"
-    }
+      }
+    ],
+    "anyOngoingCourtProceedings": true,
+    "ongoingCourtProceedings": [
+      {
+        "id": "477e81ff-5f4f-4b68-8fd2-7851f9f3d045",
+        "value": {
+          "nameOfCourt": "quis et",
+          "caseNumber": "1234",
+          "caseTypeAndOtherInfo": "Eos iure laboriosam id et blanditiis eum sint. Itaque dolores et nobis quos asperiores dolor cumque. Qui assumenda maiores nam et omnis explicabo maxime. Mollitia ullam magni mollitia ut totam voluptates omnis."
+        }
+      },
+      {
+        "id": "adb1871a-ed66-42c0-abe0-4bcb060bf0dc",
+        "value": {
+          "nameOfCourt": "et non",
+          "caseNumber": "1234",
+          "caseTypeAndOtherInfo": "Sed occaecati ut culpa. Necessitatibus fugit quasi molestias cupiditate officia dolore. Voluptatem aliquid magnam molestiae laborum iure quia. Atque itaque doloremque dolores voluptatem consectetur."
+        }
+      }
+    ]
+  },
+  "respondentBehaviour": {
+    "applyingForMonMolestationOrder": true,
+    "stopBehaviourTowardsApplicant": ["contactingApplicant"],
+    "stopBehaviourTowardsChildren": [
+      "beingViolentOrThreatening",
+      "harrasingOrIntimidating",
+      "publishingAboutChildren",
+      "goingNearSchoolNursery",
+      "seeDraftOrder"
+    ]
+  },
+  "theHome": {
+    "applyingForOccupationOrder": false,
+    "propertySpeciallyAdapted": false,
+    "propertyHasMortgage": false,
+    "propertyIsRented": false,
+    "haveHomeRights": false
+  },
+  "goingToCourt": {
+    "isInterpreterRequired": false,
+    "anyDisabilityNeeds": true,
+    "disabilityNeedsDetails": "Velit pariatur reiciendis ullam dolore non. Totam rerum aliquam iusto exercitationem. Doloremque officia at occaecati adipisci.",
+    "specialMeasures": ["separateWaitingRoom"]
+  },
+  "statementOfTruth": {
+    "declaration": ["applicantConfirm"],
+    "signature": "Ken Graham",
+    "signatureFullName": "Ken Graham",
+    "signatureDate": { "day": 22, "month": 8, "year": 2022 }
+  }
 }
