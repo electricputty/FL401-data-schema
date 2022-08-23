@@ -828,7 +828,6 @@
                         "representativePositionHeld": {
                             "type": "string"
                         }
-                     }
                     },
                     "required": [
                         "declaration",
