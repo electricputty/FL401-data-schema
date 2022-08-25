@@ -550,13 +550,94 @@
                             }
                         },
                         "relationshipStartDate": {
-                            "$ref": "#/$defs/standardDate"
+                          "allOf": { "$ref": "#/$defs/standardDate" },
+                          "properties": {
+                            "day": {
+                              "anyOf": [
+                                {
+                                  "type": "number",
+                                  "minimum": 1,
+                                  "maximum": 31
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+  
+                            },
+                            "month": {
+                              "anyOf": [
+                                {
+                                  "type": "number",
+                                  "minimum": 1,
+                                  "maximum": 12
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            }
+                          }
                         },
                         "relationshipEndDate": {
-                            "$ref": "#/$defs/standardDate"
+                          "allOf": { "$ref": "#/$defs/standardDate" },
+                          "properties": {
+                            "day": {
+                              "anyOf": [
+                                {
+                                  "type": "number",
+                                  "minimum": 1,
+                                  "maximum": 31
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+  
+                            },
+                            "month": {
+                              "anyOf": [
+                                {
+                                  "type": "number",
+                                  "minimum": 1,
+                                  "maximum": 12
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            }
+                          }
                         },
                         "ceremonyDate": {
-                            "$ref": "#/$defs/standardDate"
+                          "allOf": { "$ref": "#/$defs/standardDate" },
+                          "properties": {
+                            "day": {
+                              "anyOf": [
+                                {
+                                  "type": "number",
+                                  "minimum": 1,
+                                  "maximum": 31
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+  
+                            },
+                            "month": {
+                              "anyOf": [
+                                {
+                                  "type": "number",
+                                  "minimum": 1,
+                                  "maximum": 12
+                                },
+                                {
+                                  "type": "null"
+                                }
+                              ]
+                            }
+                          }
                         },
                         "respondentsRelationshipToApplicant": {
                             "type": "object",
@@ -841,4 +922,5 @@
         "metaData",
         "fl401"
     ]
-}
+  }
+  
