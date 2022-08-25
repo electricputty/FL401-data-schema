@@ -56,33 +56,26 @@
     "whoApplicationIsFor": "applicantAndChildren",
     "protectedChildren": [
       {
-        "id": "53b134d4-93e2-45a1-9dde-9013dace6fc3",
-        "value": {
-          "fullName": "Jo Smith",
-          "dateOfBirth": { "day": 19, "month": 8, "year": 2015 },
-          "relationship": "Daughter",
-          "parentalResponsibility": true,
-          "respondentRelationship": "Father"
-        }
+        "fullName": "Jo Smith",
+        "dateOfBirth": { "day": 19, "month": 8, "year": 2015 },
+        "relationship": "Daughter",
+        "parentalResponsibility": true,
+        "respondentRelationship": "Father"
       }
     ],
     "anyOngoingCourtProceedings": true,
     "ongoingCourtProceedings": [
       {
-        "id": "477e81ff-5f4f-4b68-8fd2-7851f9f3d045",
-        "value": {
-          "nameOfCourt": "quis et",
-          "caseNumber": "1234",
-          "caseTypeAndOtherInfo": "Eos iure laboriosam id et blanditiis eum sint. Itaque dolores et nobis quos asperiores dolor cumque. Qui assumenda maiores nam et omnis explicabo maxime. Mollitia ullam magni mollitia ut totam voluptates omnis."
-        }
+        "nameOfCourt": "quis et",
+        "caseNumber": "1234",
+        "caseType" : "parental dispute",
+        "caseDetails": "Eos iure laboriosam id et blanditiis eum sint. Itaque dolores et nobis quos asperiores dolor cumque. Qui assumenda maiores nam et omnis explicabo maxime. Mollitia ullam magni mollitia ut totam voluptates omnis."
       },
       {
-        "id": "adb1871a-ed66-42c0-abe0-4bcb060bf0dc",
-        "value": {
-          "nameOfCourt": "et non",
-          "caseNumber": "1234",
-          "caseTypeAndOtherInfo": "Sed occaecati ut culpa. Necessitatibus fugit quasi molestias cupiditate officia dolore. Voluptatem aliquid magnam molestiae laborum iure quia. Atque itaque doloremque dolores voluptatem consectetur."
-        }
+        "nameOfCourt": "et non",
+        "caseNumber": "1234",
+        "caseType" : "parental dispute",
+        "caseDetails": "Sed occaecati ut culpa. Necessitatibus fugit quasi molestias cupiditate officia dolore. Voluptatem aliquid magnam molestiae laborum iure quia. Atque itaque doloremque dolores voluptatem consectetur."
       }
     ]
   },

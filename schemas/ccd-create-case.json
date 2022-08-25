@@ -583,34 +583,18 @@
                             "$ref": "#/$defs/applicationCover"
                         },
                         "protectedChildren": {
-                            "properties": {
-                                "id": {
-                                    "type": "string",
-                                    "format": "uuid"
-                                },
-                                "value": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/$defs/protectedChild"
-                                    }
-                                }
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/protectedChild"
                             }
                         },
                         "anyOngoingCourtProceedings": {
                             "type": "boolean"
                         },
                         "ongoingCourtProceedings": {
-                            "properties": {
-                                "id": {
-                                    "type": "string",
-                                    "format": "uuid"
-                                },
-                                "value": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/$defs/courtProceeding"
-                                    }
-                                }
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/courtProceeding"
                             }
                         }
                     },
