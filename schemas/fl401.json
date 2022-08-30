@@ -581,7 +581,16 @@
             "required": [
                 "whoApplicationIsFor",
                 "anyOngoingCourtProceedings"
-            ]
+            ],
+            "if": {
+                "properties": {
+                    "whoApplicationIsFor": { "const": "applicantAndChildren" }
+                },
+                "required": [ "whoApplicationIsFor" ]
+            },
+            "then": {
+                "required": [ "protectedChildren" ]
+            }
         },
         "respondentBehaviour": {
             "type": "object",
@@ -624,7 +633,7 @@
                     "properties": {
                         "value": {
                             "type": "array",
-                            "iteme": {
+                            "items": {
                                 "$ref": "#/$defs/residentAtAddress"
                             }
                         }
@@ -663,7 +672,7 @@
                     "properties": {
                         "value": {
                             "type": "array",
-                            "iteme": {
+                            "items": {
                                 "$ref": "#/$defs/contractName"
                             }
                         }
@@ -687,7 +696,7 @@
                     "properties": {
                         "value": {
                             "type": "array",
-                            "iteme": {
+                            "items": {
                                 "$ref": "#/$defs/contractName"
                             }
                         }
