@@ -601,7 +601,16 @@
                     "required": [
                         "whoApplicationIsFor",
                         "anyOngoingCourtProceedings"
-                    ]
+                    ],
+                    "if": {
+                        "properties": {
+                            "whoApplicationIsFor": { "const": "applicantAndChildren" }
+                        },
+                        "required": [ "whoApplicationIsFor" ]
+                    },
+                    "then": {
+                        "required": [ "protectedChildren" ]
+                    }
                 },
                 "respondentBehaviour": {
                     "type": "object",
