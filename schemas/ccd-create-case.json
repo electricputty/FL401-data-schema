@@ -57,7 +57,8 @@
             "required": [
                 "fullName",
                 "age"
-            ]
+            ],
+            "additionalProperties": false
         },
         "contractName": {
             "type": "string",
@@ -87,7 +88,8 @@
                 "nameOfCourt",
                 "caseNumber",
                 "caseType"
-            ]
+            ],
+            "additionalProperties": false
         },
         "familyHomeOutcome": {
             "type": "string",
@@ -163,7 +165,8 @@
                 "relationship",
                 "parentalResponsibility",
                 "respondentRelationship"
-            ]
+            ],
+            "additionalProperties": false
         },
         "relationshipDescription": {
             "type": "string",
@@ -213,7 +216,7 @@
                 "separateWaitingRoom",
                 "seperateEntranceExit",
                 "shieldedByScreen",
-                "joinByvideoLink"
+                "joinByVideoLink"
             ]
         },
         "standardDate": {
@@ -237,7 +240,8 @@
                 "day",
                 "month",
                 "year"
-            ]
+            ],
+            "additionalProperties": false
         },
         "ukAddress": {
             "type": "object",
@@ -268,7 +272,8 @@
                 "addressUKLine1",
                 "postTown",
                 "postCode"
-            ]
+            ],
+            "additionalProperties": false
         },
         "withoutNoticeReason": {
             "type": "string",
@@ -351,7 +356,8 @@
             "required": [
                 "caseOrigin",
                 "numberOfAttachments"
-            ]
+            ],
+            "additionalProperties": false
         },
         "fl401": {
             "type": "object",
@@ -365,7 +371,8 @@
                     },
                     "required": [
                         "applicantHowOld"
-                    ]
+                    ],
+                    "additionalProperties": false
                 },
                 "situation": {
                     "type": "object",
@@ -405,19 +412,16 @@
                         "ordersAppliedWithoutNotice",
                         "bailConditionsOnRespondent"
                     ],
-                    "allOf": [
-                        {
-                            "if": {
-                                "properties": {
-                                    "ordersAppliedWithoutNotice": { "const": true }
-                                },
-                                "required": [ "ordersAppliedWithoutNotice" ]
-                            },
-                            "then": {
-                                "required": [ "ordersAppliedWithoutNoticeReason" ]
-                            }
-                        }
-                    ]
+                    "additionalProperties": false,
+                    "if": {
+                        "properties": {
+                            "ordersAppliedWithoutNotice": { "const": true }
+                        },
+                        "required": [ "ordersAppliedWithoutNotice" ]
+                    },
+                    "then": {
+                        "required": [ "ordersAppliedWithoutNoticeReason" ]
+                    }
                 },
                 "applicantDetails": {
                     "type": "object",
@@ -502,7 +506,8 @@
                         "shareContactDetailsWithRespondent",
                         "applicantAddress",
                         "applicantHasLegalRepresentative"
-                    ]
+                    ],
+                    "additionalProperties": false
                 },
                 "respondentDetails": {
                     "type": "object",
@@ -538,7 +543,8 @@
                         "respondentLastName",
                         "respondentLivesWithApplicant",
                         "respondentAddress"
-                    ]
+                    ],
+                    "additionalProperties": false
                 },
                 "relationshipWithRespondent": {
                     "type": "object",
@@ -574,7 +580,8 @@
                     "required": [
                         "relationshipDescription",
                         "anyChildren"
-                    ]
+                    ],
+                    "additionalProperties": false
                 },
                 "family": {
                     "type": "object",
@@ -602,6 +609,7 @@
                         "whoApplicationIsFor",
                         "anyOngoingCourtProceedings"
                     ],
+                    "additionalProperties": false,
                     "if": {
                         "properties": {
                             "whoApplicationIsFor": { "const": "applicantAndChildren" }
@@ -636,7 +644,8 @@
                     },
                     "required": [
                         "applyingForMonMolestationOrder"
-                    ]
+                    ],
+                    "additionalProperties": false
                 },
                 "theHome": {
                     "type": "object",
@@ -753,7 +762,8 @@
                         "propertyHasMortgage",
                         "propertyIsRented",
                         "haveHomeRights"
-                    ]
+                    ],
+                    "additionalProperties": false
                 },
                 "goingToCourt": {
                     "type": "object",
@@ -787,6 +797,7 @@
                         "isInterpreterRequired",
                         "anyDisabilityNeeds"
                     ],
+                    "additionalProperties": false,
                     "if": {
                         "properties": {
                             "anyDisabilityNeeds": { "const": true }
@@ -829,7 +840,8 @@
                         "signatureFullName",
                         "representativeFirmName",
                         "representativePositionHeld"
-                    ]
+                    ],
+                    "additionalProperties": false
                 }
             },
             "required": [
@@ -843,11 +855,13 @@
                 "theHome",
                 "goingToCourt",
                 "statementOfTruth"
-            ]
+            ],
+            "additionalProperties": false
         }
     },
     "required": [
         "metaData",
         "fl401"
-    ]
+    ],
+    "additionalProperties": false
 }

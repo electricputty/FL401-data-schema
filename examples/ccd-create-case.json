@@ -62,14 +62,18 @@
       "whoApplicationIsFor": "applicantAndChildren",
       "protectedChildren": [
         {
-          "id": "53b134d4-93e2-45a1-9dde-9013dace6fc3",
-          "value": {
             "fullName": "Jo Smith",
             "dateOfBirth": { "day": 19, "month": 8, "year": 2015 },
             "relationship": "Daughter",
             "parentalResponsibility": true,
             "respondentRelationship": "Father"
-          }
+        },
+        {
+          "fullName": "Mandy Smith",
+          "dateOfBirth": { "day": 22, "month": 03, "year": 2018 },
+          "relationship": "Son",
+          "parentalResponsibility": true,
+          "respondentRelationship": "Father"
         }
       ],
       "anyOngoingCourtProceedings": true,
@@ -110,7 +114,7 @@
       "isInterpreterRequired": false,
       "anyDisabilityNeeds": true,
       "disabilityNeedsDetails": "Velit pariatur reiciendis ullam dolore non. Totam rerum aliquam iusto exercitationem. Doloremque officia at occaecati adipisci.",
-      "specialMeasures": ["separateWaitingRoom"]
+      "anySpecialMeasures": ["separateWaitingRoom"]
     },
     "statementOfTruth": {
       "declaration": ["applicantConfirm"],

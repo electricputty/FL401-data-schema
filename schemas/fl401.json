@@ -1,6 +1,6 @@
 {
     "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "title": "FL401 Data Schema: Version 1.0",
+    "title": "FL401 Data Schema: Version 0.9",
     "type": "object",
     "$defs": {
         "applicantAgeBracket": {
@@ -16,14 +16,6 @@
             "enum": [
                 "applicantOnly",
                 "applicantAndChildren"
-            ]
-        },
-        "gender": {
-            "type": "string",
-            "enum": [
-                "Male",
-                "Female",
-                "other"
             ]
         },
         "behaviourTowardsApplicant": {
@@ -65,7 +57,8 @@
             "required": [
                 "fullName",
                 "age"
-            ]
+            ],
+            "additionalProperties": false
         },
         "contractName": {
             "type": "string",
@@ -95,7 +88,8 @@
                 "nameOfCourt",
                 "caseNumber",
                 "caseType"
-            ]
+            ],
+            "additionalProperties": false
         },
         "familyHomeOutcome": {
             "type": "string",
@@ -103,6 +97,14 @@
                 "respondentToPayRepairsMaintenance",
                 "respondentToPayRentMortgage",
                 "useOfFurnitureOrContents"
+            ]
+        },
+        "gender": {
+            "type": "string",
+            "enum": [
+                "Male",
+                "Female",
+                "other"
             ]
         },
         "livingSituationOutcome": {
@@ -163,7 +165,8 @@
                 "relationship",
                 "parentalResponsibility",
                 "respondentRelationship"
-            ]
+            ],
+            "additionalProperties": false
         },
         "relationshipDescription": {
             "type": "string",
@@ -213,7 +216,7 @@
                 "separateWaitingRoom",
                 "seperateEntranceExit",
                 "shieldedByScreen",
-                "joinByvideoLink"
+                "joinByVideoLink"
             ]
         },
         "standardDate": {
@@ -237,7 +240,8 @@
                 "day",
                 "month",
                 "year"
-            ]
+            ],
+            "additionalProperties": false
         },
         "ukAddress": {
             "type": "object",
@@ -268,14 +272,8 @@
                 "addressUKLine1",
                 "postTown",
                 "postCode"
-            ]
-        },
-        "consentTypes": {
-            "type": "string",
-            "enum": [
-                "applicantConfirm",
-                "legalAidConfirm"
-            ]
+            ],
+            "additionalProperties": false
         },
         "withoutNoticeReason": {
             "type": "string",
@@ -283,6 +281,13 @@
                 "riskOfSignificantHarm",
                 "deterredFromPursuingApplication",
                 "respondentDeliberatelyEvadingService"
+            ]
+        },
+        "consentTypes": {
+            "type": "string",
+            "enum": [
+                "applicantConfirm",
+                "legalAidConfirm"
             ]
         },
         "singleSelectOther": {
@@ -344,7 +349,8 @@
             },
             "required": [
                 "applicantHowOld"
-            ]
+            ],
+            "additionalProperties": false
         },
         "situation": {
             "type": "object",
@@ -384,19 +390,16 @@
                 "ordersAppliedWithoutNotice",
                 "bailConditionsOnRespondent"
             ],
-            "allOf": [
-                {
-                    "if": {
-                        "properties": {
-                            "ordersAppliedWithoutNotice": { "const": true }
-                        },
-                        "required": [ "ordersAppliedWithoutNotice" ]
-                    },
-                    "then": {
-                        "required": [ "ordersAppliedWithoutNoticeReason" ]
-                    }
-                }
-            ]
+            "additionalProperties": false,
+            "if": {
+                "properties": {
+                    "ordersAppliedWithoutNotice": { "const": true }
+                },
+                "required": [ "ordersAppliedWithoutNotice" ]
+            },
+            "then": {
+                "required": [ "ordersAppliedWithoutNoticeReason" ]
+            }
         },
         "applicantDetails": {
             "type": "object",
@@ -482,7 +485,8 @@
                 "shareContactDetailsWithRespondent",
                 "applicantAddress",
                 "applicantHasLegalRepresentative"
-            ]
+            ],
+            "additionalProperties": false
         },
         "respondentDetails": {
             "type": "object",
@@ -518,7 +522,8 @@
                 "respondentLastName",
                 "respondentLivesWithApplicant",
                 "respondentAddress"
-            ]
+            ],
+            "additionalProperties": false
         },
         "relationshipWithRespondent": {
             "type": "object",
@@ -554,7 +559,8 @@
             "required": [
                 "relationshipDescription",
                 "anyChildren"
-            ]
+            ],
+            "additionalProperties": false
         },
         "family": {
             "type": "object",
@@ -582,6 +588,7 @@
                 "whoApplicationIsFor",
                 "anyOngoingCourtProceedings"
             ],
+            "additionalProperties": false,
             "if": {
                 "properties": {
                     "whoApplicationIsFor": { "const": "applicantAndChildren" }
@@ -616,7 +623,8 @@
             },
             "required": [
                 "applyingForMonMolestationOrder"
-            ]
+            ],
+            "additionalProperties": false
         },
         "theHome": {
             "type": "object",
@@ -733,7 +741,8 @@
                 "propertyHasMortgage",
                 "propertyIsRented",
                 "haveHomeRights"
-            ]
+            ],
+            "additionalProperties": false
         },
         "goingToCourt": {
             "type": "object",
@@ -764,6 +773,7 @@
                 "isInterpreterRequired",
                 "anyDisabilityNeeds"
             ],
+            "additionalProperties": false,
             "if": {
                 "properties": {
                     "anyDisabilityNeeds": { "const": true }
@@ -806,7 +816,8 @@
                 "signatureFullName",
                 "representativeFirmName",
                 "representativePositionHeld"
-            ]
+            ],
+            "additionalProperties": false
         }
     },
     "required": [
@@ -820,5 +831,6 @@
         "theHome",
         "goingToCourt",
         "statementOfTruth"
-    ]
+    ],
+    "additionalProperties": false
 }

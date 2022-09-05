@@ -101,7 +101,7 @@
     "isInterpreterRequired": false,
     "anyDisabilityNeeds": true,
     "disabilityNeedsDetails": "Velit pariatur reiciendis ullam dolore non. Totam rerum aliquam iusto exercitationem. Doloremque officia at occaecati adipisci.",
-    "specialMeasures": ["separateWaitingRoom"]
+    "anySpecialMeasures": ["joinByVideoLink"]
   },
   "statementOfTruth": {
     "declaration": ["applicantConfirm"],
