@@ -368,15 +368,41 @@
                         "bailConditionsOnRespondent"
                     ],
                     "additionalProperties": false,
-                    "if": {
-                        "properties": {
-                            "ordersAppliedWithoutNotice": { "const": true }
+                    "allOf": [
+                        {
+                            "if": {
+                                "properties": {
+                                    "ordersAppliedWithoutNotice": { "const": true }
+                                },
+                                "required": [ "ordersAppliedWithoutNotice" ]
+                            },
+                            "then": {
+                                "required": [ "ordersAppliedWithoutNoticeReason" ]
+                            }
                         },
-                        "required": [ "ordersAppliedWithoutNotice" ]
-                    },
-                    "then": {
-                        "required": [ "ordersAppliedWithoutNoticeReason" ]
-                    }
+                        {
+                            "if": {
+                                "properties": {
+                                    "ordersAppliedWithoutNotice": { "const": true }
+                                },
+                                "required": [ "ordersAppliedWithoutNotice" ]
+                            },
+                            "then": {
+                                "required": [ "ordersAppliedWithoutNoticeReasonDetails" ]
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "bailConditionsOnRespondent": { "const": true }
+                                },
+                                "required": [ "bailConditionsOnRespondent" ]
+                            },
+                            "then": {
+                                "required": [ "bailConditionsEndDate" ]
+                            }
+                        }
+                    ]
                 },
                 "applicantDetails": {
                     "type": "object",
@@ -458,6 +484,7 @@
                         "applicantDateOfBirth",
                         "shareContactDetailsWithRespondent",
                         "applicantAddress",
+                        "applicantPreferredContact",
                         "applicantHasLegalRepresentative"
                     ],
                     "if": {
@@ -590,15 +617,30 @@
                         "anyOngoingCourtProceedings"
                     ],
                     "additionalProperties": false,
-                    "if": {
-                        "properties": {
-                            "whoApplicationIsFor": { "const": "applicantAndChildren" }
+                    "allOf": [
+                        {
+                            "if": {
+                                "properties": {
+                                    "whoApplicationIsFor": { "const": "applicantAndChildren" }
+                                },
+                                "required": [ "whoApplicationIsFor" ]
+                            },
+                            "then": {
+                                "required": [ "protectedChildren" ]
+                            }
                         },
-                        "required": [ "whoApplicationIsFor" ]
-                    },
-                    "then": {
-                        "required": [ "protectedChildren" ]
-                    }
+                        {
+                            "if": {
+                                "properties": {
+                                    "anyOngoingCourtProceedings": { "const": true }
+                                },
+                                "required": [ "anyOngoingCourtProceedings" ]
+                            },
+                            "then": {
+                                "required": [ "ongoingCourtProceedings" ]
+                            }
+                        }
+                    ]
                 },
                 "respondentBehaviour": {
                     "type": "object",
