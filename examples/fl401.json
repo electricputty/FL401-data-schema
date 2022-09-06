@@ -16,13 +16,14 @@
     "applicantFirstName": "Ken",
     "applicantLastName": "Graham",
     "applicantOtherNames": "Adam",
-    "applicantGender": { "value": "other", "other": "Transgender" },
+    "applicantGender": "other",
+    "applicantGenderOther": "Transgender",
     "applicantDateOfBirth": { "day": 19, "month": 8, "year": 1947 },
     "shareContactDetailsWithRespondent": true,
     "applicantAddress": {
-      "addressUKLine1": "1 The Mews",
-      "addressUKLine2": "High Street",
-      "addressUKLine3": "East Sussex",
+      "addressLine1": "1 The Mews",
+      "addressLine2": "High Street",
+      "addressLine3": "East Sussex",
       "postTown": "Brighton",
       "postCode": "BN3 2BE"
     },
@@ -36,9 +37,9 @@
     "respondentDateOfBirth": { "day": 19, "month": 8, "year": 1968 },
     "respondentLivesWithApplicant": true,
     "respondentAddress": {
-      "addressUKLine1": "1 The Mews",
-      "addressUKLine2": "High Street",
-      "addressUKLine3": "Eat Sussex",
+      "addressLine1": "1 The Mews",
+      "addressLine2": "High Street",
+      "addressLine3": "Eat Sussex",
       "postTown": "Brighton",
       "postCode": "BN3 2BE"
     },
@@ -86,8 +87,7 @@
       "beingViolentOrThreatening",
       "harrasingOrIntimidating",
       "publishingAboutChildren",
-      "goingNearSchoolNursery",
-      "seeDraftOrder"
+      "goingNearSchoolNursery"
     ]
   },
   "theHome": {

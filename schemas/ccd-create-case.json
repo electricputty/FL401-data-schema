@@ -29,8 +29,7 @@
                 "damagingHome",
                 "enteringHome",
                 "comingNearHome",
-                "comingNearWork",
-                "seeDraftOrder"
+                "comingNearWork"
             ]
         },
         "behaviourTowardsChildren": {
@@ -40,8 +39,7 @@
                 "harrasingOrIntimidating",
                 "publishingAboutChildren",
                 "contactingDirectly",
-                "goingNearSchoolNursery",
-                "seeDraftOrder"
+                "goingNearSchoolNursery"
             ]
         },
         "childAtAddress": {
@@ -102,8 +100,8 @@
         "gender": {
             "type": "string",
             "enum": [
-                "Male",
-                "Female",
+                "male",
+                "female",
                 "other"
             ]
         },
@@ -246,13 +244,13 @@
         "ukAddress": {
             "type": "object",
             "properties": {
-                "addressUKLine1": {
+                "addressLine1": {
                     "type": "string"
                 },
-                "addressUKLine2": {
+                "addressLine2": {
                     "type": "string"
                 },
-                "addressUKLine3": {
+                "addressLine3": {
                     "type": "string"
                 },
                 "postTown": {
@@ -269,7 +267,7 @@
                 }
             },
             "required": [
-                "addressUKLine1",
+                "addressLine1",
                 "postTown",
                 "postCode"
             ],
@@ -289,54 +287,6 @@
                 "applicantConfirm",
                 "legalAidConfirm"
             ]
-        },
-        "singleSelectOther": {
-            "type": "object",
-            "properties": {
-                "other": {
-                    "type": "string"
-                }
-            },
-            "if": {
-                "properties": {
-                    "value": {
-                        "const": "other"
-                    }
-                },
-                "required": [
-                    "value"
-                ]
-            },
-            "then": {
-                "required": [
-                    "other"
-                ]
-            }
-        },
-        "multiSelectOther": {
-            "type": "object",
-            "properties": {
-                "other": {
-                    "type": "string"
-                }
-            },
-            "if": {
-                "properties": {
-                    "value": {
-                        "contains": {
-                            "const": "other"
-                        }
-                    }
-                },
-                "required": [
-                    "value"
-                ]
-            },
-            "then": {
-                "required": [
-                    "other"
-                ]
-            }
         }
     },
     "properties": {
@@ -349,12 +299,17 @@
                 "courtNavApproved": {
                     "type": "boolean"
                 },
+                "hasDraftOrder": {
+                    "type": "boolean"
+                },
                 "numberOfAttachments": {
                     "type": "integer"
                 }
             },
             "required": [
                 "caseOrigin",
+                "courtNavApproved",
+                "hasDraftOrder",
                 "numberOfAttachments"
             ],
             "additionalProperties": false
@@ -436,13 +391,10 @@
                             "type": "string"
                         },
                         "applicantGender": {
-                            "type": "object",
-                            "allOf": [{ "$ref": "#/$defs/singleSelectOther" }],
-                            "properties": {
-                                "value": {
-                                    "$ref": "#/$defs/gender"
-                                }
-                            }
+                            "$ref": "#/$defs/gender"
+                        },
+                        "applicantGenderOther": {
+                            "type": "string"
                         },
                         "applicantDateOfBirth": {
                             "$ref": "#/$defs/standardDate"
@@ -502,11 +454,21 @@
                     "required": [
                         "applicantFirstName",
                         "applicantLastName",
+                        "applicantGender",
                         "applicantDateOfBirth",
                         "shareContactDetailsWithRespondent",
                         "applicantAddress",
                         "applicantHasLegalRepresentative"
                     ],
+                    "if": {
+                        "properties": {
+                            "applicantGender": { "const": "other" }
+                        },
+                        "required": [ "applicantGender" ]
+                    },
+                    "then": {
+                        "required": [ "applicantGenderOther" ]
+                    },
                     "additionalProperties": false
                 },
                 "respondentDetails": {
@@ -550,10 +512,7 @@
                     "type": "object",
                     "properties": {
                         "relationshipDescription": {
-                            "type": "string",
-                            "items": {
-                                "$ref": "#/$defs/relationshipDescription"
-                            }
+                            "$ref": "#/$defs/relationshipDescription"
                         },
                         "relationshipStartDate": {
                             "$ref": "#/$defs/standardDate"
@@ -565,13 +524,10 @@
                             "$ref": "#/$defs/standardDate"
                         },
                         "respondentsRelationshipToApplicant": {
-                            "type": "object",
-                            "allOf": [{ "$ref": "#/$defs/singleSelectOther" }],
-                            "properties": {
-                                "value": {
-                                    "$ref": "#/$defs/relationshipType"
-                                }
-                            }
+                            "$ref": "#/$defs/relationshipType"
+                        },
+                        "respondentsRelationshipToApplicantOther": {
+                            "type": "string"
                         },
                         "anyChildren": {
                             "type": "boolean"
@@ -580,6 +536,30 @@
                     "required": [
                         "relationshipDescription",
                         "anyChildren"
+                    ],
+                    "allOf": [
+                        {
+                            "if": {
+                                "properties": {
+                                    "relationshipDescription": { "const": "noneOfAbove" }
+                                },
+                                "required": [ "relationshipDescription" ]
+                            },
+                            "then": {
+                                "required": [ "respondentsRelationshipToApplicant" ]
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "respondentsRelationshipToApplicant": { "const": "other" }
+                                },
+                                "required": [ "respondentsRelationshipToApplicant" ]
+                            },
+                            "then": {
+                                "required": [ "respondentsRelationshipToApplicantOther" ]
+                            }
+                        }
                     ],
                     "additionalProperties": false
                 },
@@ -657,16 +637,13 @@
                             "$ref": "#/$defs/ukAddress"
                         },
                         "currentlyLivesAtAddress": {
-                            "type": "object",
-                            "allOf": [{ "$ref": "#/$defs/multiSelectOther" }],
-                            "properties": {
-                                "value": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/$defs/residentAtAddress"
-                                    }
-                                }
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/residentAtAddress"
                             }
+                        },
+                        "currentlyLivesAtAddressOther": {
+                            "type": "string"
                         },
                         "previouslyLivedAtAddress": {
                             "$ref": "#/$defs/previousOrIntendedResidentAtAddress"
@@ -696,16 +673,13 @@
                             "type": "boolean"
                         },
                         "namedOnMortgage": {
-                            "type": "object",
-                            "allOf": [{ "$ref": "#/$defs/multiSelectOther" }],
-                            "properties": {
-                                "value": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/$defs/contractName"
-                                    }
-                                }
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/contractName"
                             }
+                        },
+                        "namedOnMortgageOther": {
+                            "type": "string"
                         },
                         "mortgageNumber": {
                             "type": "string"
@@ -720,16 +694,13 @@
                             "type": "boolean"
                         },
                         "namedOnRentalAgreement": {
-                            "type": "object",
-                            "allOf": [{ "$ref": "#/$defs/multiSelectOther" }],
-                            "properties": {
-                                "value": {
-                                    "type": "array",
-                                    "items": {
-                                        "$ref": "#/$defs/contractName"
-                                    }
-                                }
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/$defs/contractName"
                             }
+                        },
+                        "namedOnRentalAgreementOther": {
+                            "type": "string"
                         },
                         "landlordName": {
                             "type": "string"
@@ -762,6 +733,53 @@
                         "propertyHasMortgage",
                         "propertyIsRented",
                         "haveHomeRights"
+                    ],
+                    "allOf": [
+                        {
+                            "if": {
+                                "properties": {
+                                    "currentlyLivesAtAddress": {
+                                        "contains": {
+                                            "const": "other"
+                                        }
+                                    }
+                                },
+                                "required": [ "currentlyLivesAtAddress" ]
+                            },
+                            "then": {
+                                "required": [ "currentlyLivesAtAddressOther" ]
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "namedOnMortgage": {
+                                        "contains": {
+                                            "const": "other"
+                                        }
+                                    }
+                                },
+                                "required": [ "namedOnMortgage" ]
+                            },
+                            "then": {
+                                "required": [ "namedOnMortgageOther" ]
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "namedOnRentalAgreement": {
+                                        "contains": {
+                                            "const": "other"
+                                        }
+                                    }
+                                },
+                                "required": [ "namedOnRentalAgreement" ]
+                            },
+                            "then": {
+                                "required": [ "namedOnRentalAgreementOther" ]
+                            }
+                        }
                     ],
                     "additionalProperties": false
                 },

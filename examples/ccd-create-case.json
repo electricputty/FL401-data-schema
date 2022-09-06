@@ -2,6 +2,7 @@
   "metaData": {
     "caseOrigin": "CourtNav",
     "courtNavApproved": true,
+    "hasDraftOrder": false,
     "numberOfAttachments": 6
   },
   "fl401": {
@@ -22,13 +23,14 @@
       "applicantFirstName": "Ken",
       "applicantLastName": "Graham",
       "applicantOtherNames": "Adam",
-      "applicantGender": { "value": "other", "other": "Transgender" },
+      "applicantGender": "other",
+      "applicantGenderOther": "Transgender",
       "applicantDateOfBirth": { "day": 19, "month": 8, "year": 1947 },
       "shareContactDetailsWithRespondent": true,
       "applicantAddress": {
-        "addressUKLine1": "1 The Mews",
-        "addressUKLine2": "High Street",
-        "addressUKLine3": "East Sussex",
+        "addressLine1": "1 The Mews",
+        "addressLine2": "High Street",
+        "addressLine3": "East Sussex",
         "postTown": "Brighton",
         "postCode": "BN3 2BE"
       },
@@ -42,9 +44,9 @@
       "respondentDateOfBirth": { "day": 19, "month": 8, "year": 1968 },
       "respondentLivesWithApplicant": true,
       "respondentAddress": {
-        "addressUKLine1": "1 The Mews",
-        "addressUKLine2": "High Street",
-        "addressUKLine3": "Eat Sussex",
+        "addressLine1": "1 The Mews",
+        "addressLine2": "High Street",
+        "addressLine3": "Eat Sussex",
         "postTown": "Brighton",
         "postCode": "BN3 2BE"
       },
@@ -52,10 +54,12 @@
       "respondentEmailAddress": "isaac62@example.net"
     },
     "relationshipWithRespondent": {
-      "relationshipDescription": "formerlyMarriedOrCivil",
+      "relationshipDescription": "noneOfAbove",
       "relationshipStartDate": { "day": 19, "month": 8, "year": 1949 },
       "relationshipEndDate": { "day": 19, "month": 8, "year": 1983 },
       "ceremonyDate": { "day": 19, "month": 8, "year": 1974 },
+      "respondentsRelationshipToApplicant": "other",
+      "respondentsRelationshipToApplicantOther": "this is another type of relationship",
       "anyChildren": true
     },
     "family": {
@@ -70,7 +74,7 @@
         },
         {
           "fullName": "Mandy Smith",
-          "dateOfBirth": { "day": 22, "month": 03, "year": 2018 },
+          "dateOfBirth": { "day": 22, "month": 3, "year": 2018 },
           "relationship": "Son",
           "parentalResponsibility": true,
           "respondentRelationship": "Father"
@@ -99,14 +103,17 @@
         "beingViolentOrThreatening",
         "harrasingOrIntimidating",
         "publishingAboutChildren",
-        "goingNearSchoolNursery",
-        "seeDraftOrder"
+        "goingNearSchoolNursery"
       ]
     },
     "theHome": {
       "applyingForOccupationOrder": false,
+      "currentlyLivesAtAddress": ["other"],
+      "currentlyLivesAtAddressOther": "Aunt Maureen",
       "propertySpeciallyAdapted": false,
-      "propertyHasMortgage": false,
+      "propertyHasMortgage": true,
+      "namedOnMortgage": ["other"],
+      "namedOnMortgageOther": "Father in law",
       "propertyIsRented": false,
       "haveHomeRights": false
     },

@@ -19,6 +19,7 @@ The intention is to make the element names as transparent and human readable as 
 2. Where the paper version refers to `you` or `your` the schema uses `applicant` - for example `Your date of birth` is referenced as `applicantDateOfBirth`
 2. All element names are expressed in camel case (e.g. lowercase initial letter with capital letters at the start of each subsequent word)
 3. In most cases 'short words' have been removed (e.g. &, and, or) except where these help with readibility
+4. Where a property has an 'other' option, an additonal property exists in the schema to store the 'other' value - this shares the name of the original with the suffix Other. For example: `applicantGender` and `applicantGenderOther`
 
 ## Structure
 
@@ -29,29 +30,7 @@ The intention is to make the element names as transparent and human readable as 
 1. Property values must be Unicode booleans, numbers, strings, objects, arrays - do not include nulls or empty strings
 1. All addresses are expressed using a sub-schema (#/definitions/ukAddress)
 1. All dates are expressed using a sub-schema (#/definitions/standardDate)
-1. All 'Select + other' values share a common sub-schema (#/definitions/singleSelectOther OR #/definitions/multiSelectOther) so should be expressed as an object. e.g
 
-For Single Select Other
-
-````
-"respondentsRelationshipToApplicant": {
-    "value": "other",
-    "other": "This is more information about the relationship with the respondent"
-},
-````
-
-For Multi Select Other
-
-````
-"currentlyLivesAtAddress": {
-    "value": [
-        "applicant",
-        "respondent",
-        "other"
-    ],
-    "other": "My friend Sue Johnson also lives at the house"
-},
-````
 ## Validation
 
 Validation has been kept to a minimum. The following rules are enforced:
