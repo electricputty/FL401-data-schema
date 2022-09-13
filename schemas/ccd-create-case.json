@@ -484,6 +484,7 @@
                         "applicantDateOfBirth",
                         "shareContactDetailsWithRespondent",
                         "applicantAddress",
+                        "applicantEmailAddress",
                         "applicantPreferredContact",
                         "applicantHasLegalRepresentative"
                     ],
@@ -565,6 +566,19 @@
                         "anyChildren"
                     ],
                     "allOf": [
+                        {
+                            "if": {
+                                "not": {
+                                    "properties": {
+                                        "relationshipDescription": { "const": "noneOfAbove" }
+                                    },
+                                    "required": ["relationshipDescription"]
+                                }
+                            },
+                            "then": {
+                                "required": ["relationshipStartDate"]
+                            }
+                        },
                         {
                             "if": {
                                 "properties": {
@@ -667,7 +681,20 @@
                     "required": [
                         "applyingForMonMolestationOrder"
                     ],
-                    "additionalProperties": false
+                    "additionalProperties": false,
+                    "allOf": [
+                        {
+                            "if": {
+                                "properties": {
+                                    "applyingForMonMolestationOrder": { "const": true }
+                                },
+                                "required": [ "applyingForMonMolestationOrder" ]
+                            },
+                            "then": {
+                                "required": [ "stopBehaviourTowardsApplicant" ]
+                            }
+                        }
+                    ]
                 },
                 "theHome": {
                     "type": "object",
@@ -780,16 +807,62 @@
                         {
                             "if": {
                                 "properties": {
+                                    "applyingForOccupationOrder": { "const": true }
+                                },
+                                "required": [ "applyingForOccupationOrder" ]
+                            },
+                            "then": {
+                                "required": [
+                                    "occupationOrderAddress",
+                                    "currentlyLivesAtAddress",
+                                    "wantToHappenWithLivingSituation"
+                                ]
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
                                     "currentlyLivesAtAddress": {
-                                        "contains": {
-                                            "const": "other"
-                                        }
+                                        "contains": { "const": "other" }
                                     }
                                 },
                                 "required": [ "currentlyLivesAtAddress" ]
                             },
                             "then": {
                                 "required": [ "currentlyLivesAtAddressOther" ]
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "previouslyLivedAtAddress": { "const": "neither" }
+                                },
+                                "required": [ "previouslyLivedAtAddress" ]
+                            },
+                            "then": {
+                                "required": [ "intendedToLiveAtAddress" ]
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "propertySpeciallyAdapted": { "const": true }
+                                },
+                                "required": [ "propertySpeciallyAdapted" ]
+                            },
+                            "then": {
+                                "required": [ "propertySpeciallyAdaptedDetails" ]
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "propertyHasMortgage": { "const": true }
+                                },
+                                "required": [ "propertyHasMortgage" ]
+                            },
+                            "then": {
+                                "required": [ "namedOnMortgage" ]
                             }
                         },
                         {
@@ -810,6 +883,17 @@
                         {
                             "if": {
                                 "properties": {
+                                    "propertyIsRented": { "const": true }
+                                },
+                                "required": [ "propertyIsRented" ]
+                            },
+                            "then": {
+                                "required": [ "namedOnRentalAgreement" ]
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
                                     "namedOnRentalAgreement": {
                                         "contains": {
                                             "const": "other"
@@ -820,6 +904,17 @@
                             },
                             "then": {
                                 "required": [ "namedOnRentalAgreementOther" ]
+                            }
+                        },
+                        {
+                            "if": {
+                                "properties": {
+                                    "propertyIsRented": { "const": true }
+                                },
+                                "required": [ "propertyIsRented" ]
+                            },
+                            "then": {
+                                "required": [ "landlordName" ]
                             }
                         }
                     ],
@@ -858,15 +953,30 @@
                         "anyDisabilityNeeds"
                     ],
                     "additionalProperties": false,
-                    "if": {
-                        "properties": {
-                            "anyDisabilityNeeds": { "const": true }
+                    "allOf": [
+                        {
+                            "if": {
+                                "properties": {
+                                    "isInterpreterRequired": { "const": true }
+                                },
+                                "required": [ "isInterpreterRequired" ]
+                            },
+                            "then": {
+                                "required": [ "interpreterLanguage" ]
+                            }
                         },
-                        "required": [ "anyDisabilityNeeds" ]
-                    },
-                    "then": {
-                        "required": [ "disabilityNeedsDetails" ]
-                    }
+                        {
+                            "if": {
+                                "properties": {
+                                    "anyDisabilityNeeds": { "const": true }
+                                },
+                                "required": [ "anyDisabilityNeeds" ]
+                            },
+                            "then": {
+                                "required": [ "disabilityNeedsDetails" ]
+                            }
+                        }
+                    ]
                 },
                 "statementOfTruth": {
                     "type": "object",

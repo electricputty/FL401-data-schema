@@ -91,17 +91,26 @@
     ]
   },
   "theHome": {
-    "applyingForOccupationOrder": false,
+    "applyingForOccupationOrder": true,
+    "occupationOrderAddress": {
+      "addressLine1": "52 Oak Grove",
+      "postTown": "Hove",
+      "postCode": "BN3 2BE"
+    },
+    "currentlyLivesAtAddress": ["other"],
+    "currentlyLivesAtAddressOther": "This is the more info on who lives at the address",
     "propertySpeciallyAdapted": false,
     "propertyHasMortgage": false,
     "propertyIsRented": false,
-    "haveHomeRights": false
+    "haveHomeRights": false,
+    "wantToHappenWithLivingSituation": ["respondentNotEnterHome"]
   },
   "goingToCourt": {
-    "isInterpreterRequired": false,
+    "isInterpreterRequired": true,
+    "interpreterLanguage": "Spanish",
     "anyDisabilityNeeds": true,
     "disabilityNeedsDetails": "Velit pariatur reiciendis ullam dolore non. Totam rerum aliquam iusto exercitationem. Doloremque officia at occaecati adipisci.",
-    "anySpecialMeasures": ["joinByVideoLink"]
+    "anySpecialMeasures": ["seperateEntranceExit", "shieldedByScreen"]
   },
   "statementOfTruth": {
     "declaration": ["applicantConfirm"],

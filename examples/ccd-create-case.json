@@ -118,7 +118,8 @@
       "haveHomeRights": false
     },
     "goingToCourt": {
-      "isInterpreterRequired": false,
+      "isInterpreterRequired": true,
+      "interpreterLanguage": "French",
       "anyDisabilityNeeds": true,
       "disabilityNeedsDetails": "Velit pariatur reiciendis ullam dolore non. Totam rerum aliquam iusto exercitationem. Doloremque officia at occaecati adipisci.",
       "anySpecialMeasures": ["separateWaitingRoom"]
