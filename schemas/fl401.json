@@ -916,9 +916,6 @@
                     "items": {
                         "$ref": "#/$defs/specialMeasures"
                     }
-                },
-                "courtSpecialRequirements": {
-                    "type": "string"
                 }
             },
             "required": [
@@ -999,5 +996,26 @@
         "goingToCourt",
         "statementOfTruth"
     ],
+    "if": {
+        "properties": {
+            "family": {
+                "properties": {
+                    "whoApplicationIsFor": { "const": "applicantAndChildren" }
+                }
+            },
+            "respondentBehaviour": {
+                "properties": {
+                    "applyingForMonMolestationOrder": { "const": true }
+                }
+            }
+        }
+    },
+    "then": {
+        "properties": {
+            "respondentBehaviour": {
+                "required": [ "stopBehaviourTowardsChildren" ]
+            }
+        }
+    },
     "additionalProperties": false
 }

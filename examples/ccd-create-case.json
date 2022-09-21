@@ -3,7 +3,8 @@
     "caseOrigin": "CourtNav",
     "courtNavApproved": true,
     "hasDraftOrder": false,
-    "numberOfAttachments": 6
+    "numberOfAttachments": 6,
+    "courtSpecialRequirements": "This is an example of some content which will descrive special requirements at court"
   },
   "fl401": {
     "beforeStart": { "applicantHowOld": "eighteenOrOlder" },
