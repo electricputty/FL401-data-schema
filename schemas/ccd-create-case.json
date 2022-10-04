@@ -266,11 +266,6 @@
                     "type": "string"
                 }
             },
-            "required": [
-                "addressLine1",
-                "postTown",
-                "postCode"
-            ],
             "additionalProperties": false
         },
         "withoutNoticeReason": {
@@ -432,7 +427,12 @@
                             "type": "boolean"
                         },
                         "applicantAddress": {
-                            "$ref": "#/$defs/ukAddress"
+                            "$ref": "#/$defs/ukAddress",
+                            "required": [
+                                "addressLine1",
+                                "postTown",
+                                "postCode"
+                            ]
                         },
                         "applicantPhoneNumber": {
                             "type": "string"
@@ -521,7 +521,11 @@
                             "type": "boolean"
                         },
                         "respondentAddress": {
-                            "$ref": "#/$defs/ukAddress"
+                            "$ref": "#/$defs/ukAddress",
+                            "required": [
+                                "addressLine1",
+                                "postTown"
+                            ]
                         },
                         "respondentPhoneNumber": {
                             "type": "string"
@@ -706,7 +710,12 @@
                             "type": "boolean"
                         },
                         "occupationOrderAddress": {
-                            "$ref": "#/$defs/ukAddress"
+                            "$ref": "#/$defs/ukAddress",
+                            "required": [
+                                "addressLine1",
+                                "postTown",
+                                "postCode"
+                            ]
                         },
                         "currentlyLivesAtAddress": {
                             "type": "array",
@@ -760,7 +769,11 @@
                             "type": "string"
                         },
                         "mortgageLenderAddress": {
-                            "$ref": "#/$defs/ukAddress"
+                            "$ref": "#/$defs/ukAddress",
+                            "required": [
+                                "addressLine1",
+                                "postTown"
+                            ]
                         },
                         "propertyIsRented":  {
                             "type": "boolean"
