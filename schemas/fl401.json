@@ -637,12 +637,14 @@
                 },
                 "stopBehaviourTowardsApplicant": {
                     "type": "array",
+                    "minItems": 0,
                     "items": {
                         "$ref": "#/$defs/behaviourTowardsApplicant"
                     }
                 },
                 "stopBehaviourTowardsChildren": {
                     "type": "array",
+                    "minItems": 0,
                     "items": {
                         "$ref": "#/$defs/behaviourTowardsChildren"
                     }
